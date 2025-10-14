@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Austin Sarkis • ePortfolio</title>
+
+  <!-- Tailwind (CDN, no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Swiper (carousel) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <main class="max-w-5xl mx-auto p-6">
+    <h1 class="text-3xl font-bold">Setup OK ✅</h1>
+    <p class="mt-2 text-gray-600">Tailwind + Swiper are loaded. We’ll add cards and the carousel next.</p>
+
+    <!-- Proof Tailwind works -->
+    <div class="mt-6 p-4 rounded-xl bg-white shadow ring-1 ring-black/5">
+      Tailwind utility classes are styling this box.
+    </div>
+
+    <!-- Proof Swiper loads (empty, but initialized) -->
+    <div class="swiper mt-8">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="p-6 rounded-xl bg-white shadow ring-1 ring-black/5">Slide A</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="p-6 rounded-xl bg-white shadow ring-1 ring-black/5">Slide B</div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <script>
+      // Minimal init to confirm Swiper loads
+      const swiper = new Swiper('.swiper', {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      });
+    </script>
+  </main>
+</body>
+</html>
