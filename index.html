@@ -1,51 +1,106 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Austin Sarkis • ePortfolio</title>
+  <meta name="description" content="Projects and writing by Austin Sarkis — software developer.">
+  <meta property="og:title" content="Austin Sarkis • ePortfolio">
+  <meta property="og:description" content="Selected projects across mobile, web, and algorithms.">
+  <meta property="og:type" content="website">
 
-  <!-- Tailwind (CDN, no build step) -->
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f2937'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='36' fill='white'%3EAS%3C/text%3E%3C/svg%3E">
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Swiper (carousel) -->
+  <!-- Swiper (for carousels) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Site header/footer loader -->
+  <script defer src="assets/js/site.js"></script>
+
+  <!-- Section include loader -->
+  <script defer src="assets/js/includes.js"></script>
+
+  <link rel="stylesheet" href="assets/css/custom.css">
 </head>
+
 <body class="bg-gray-50 text-gray-900">
-  <main class="max-w-5xl mx-auto p-6">
-    <h1 class="text-3xl font-bold">Setup OK ✅</h1>
-    <p class="mt-2 text-gray-600">Tailwind + Swiper are loaded. We’ll add cards and the carousel next.</p>
 
-    <!-- Proof Tailwind works -->
-    <div class="mt-6 p-4 rounded-xl bg-white shadow ring-1 ring-black/5">
-      Tailwind utility classes are styling this box.
-    </div>
+  <!-- Header injected by site.js -->
+  <div data-include="header"></div>
 
-    <!-- Proof Swiper loads (empty, but initialized) -->
-    <div class="swiper mt-8">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="p-6 rounded-xl bg-white shadow ring-1 ring-black/5">Slide A</div>
-        </div>
-        <div class="swiper-slide">
-          <div class="p-6 rounded-xl bg-white shadow ring-1 ring-black/5">Slide B</div>
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Each section pulls in its fragment -->
+    <section id="welcome" data-include="fragments/welcome.html" class="pt-10 pb-6"></section>
+    <section id="introduction" data-include="fragments/introduction.html" class="py-8"></section>
+    <section id="growth" data-include="fragments/growth.html" class="py-8"></section>
+    <section id="competencies" data-include="fragments/competencies.html" class="py-8"></section>
+    <section id="artifacts" data-include="fragments/artifacts.html" class="py-10"></section>
+
+    <!-- Code Review section -->
+    <section id="code-review" class="py-10">
+      <div data-include="fragments/code-review-top.html"></div>
+
+      <!-- YouTube video -->
+      <div class="mt-6">
+        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-black/5 bg-black">
+          <iframe class="w-full h-full"
+            src="https://www.youtube.com/embed/Q7jSqqBDJf8"
+            title="Code Review Process"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
 
-    <script>
-      // Minimal init to confirm Swiper loads
-      const swiper = new Swiper('.swiper', {
-        slidesPerView: 1,
-        spaceBetween: 16,
-        pagination: { el: '.swiper-pagination', clickable: true },
-        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      });
-    </script>
+      <div data-include="fragments/code-review-bottom.html"></div>
+    </section>
+
+    <section id="enhancements" data-include="fragments/enhancements.html" class="py-10"></section>
+    <section id="reflection" data-include="fragments/reflection.html" class="py-10 pb-16"></section>
   </main>
+
+  <!-- Footer injected by site.js -->
+  <div data-include="footer"></div>
+
+  <!-- Swiper initialization -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // Artifacts carousel (2 cards)
+      if (document.querySelector('.artifacts-swiper')) {
+        new Swiper('.artifacts-swiper', {
+          slidesPerView: 1,
+          spaceBetween: 16,
+          loop: true,
+          pagination: { el: '.swiper-pagination', clickable: true },
+          navigation: { nextEl: '.art-next', prevEl: '.art-prev' },
+          breakpoints: { 768: { slidesPerView: 2 } }
+        });
+      }
+
+      // Enhancements carousel (3 cards)
+      if (document.querySelector('.enhancements-swiper')) {
+        new Swiper('.enhancements-swiper', {
+          slidesPerView: 1,
+          spaceBetween: 16,
+          loop: true,
+          pagination: { el: '.swiper-pagination', clickable: true },
+          navigation: { nextEl: '.enh-next', prevEl: '.enh-prev' },
+          breakpoints: {
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
+          }
+        });
+      }
+    });
+  </script>
 </body>
+
 </html>
