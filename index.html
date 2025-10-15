@@ -47,22 +47,40 @@
         <section id="artifacts" class="py-10">
             <h2 class="text-2xl font-bold mb-4">Artifacts</h2>
             <div class="grid gap-6 sm:grid-cols-2">
-                <!-- Artifact Card 1 -->
-                <article class="bg-white rounded-2xl shadow ring-1 ring-black/5 overflow-hidden flex flex-col">
-                    <!-- Cropped by default; expands after 3s hover -->
-                    <div class="img-window relative overflow-hidden w-full" data-hover-expand>
-                        <a href="assets/images/artifact1/01-login.webp" target="_blank" rel="noopener" class="block">
-                            <div class="w-full h-40 sm:h-48 md:h-56 bg-center bg-cover"
-                                style="background-image: url('assets/images/artifact1/00-thumbnail.webp');">
-                            </div>
-                        </a>
+                <!-- Artifact Card 1 (thumbnail not clickable) -->
+                <article
+                    class="bg-white rounded-2xl shadow-lg md:shadow-xl hover:shadow-2xl transition-shadow duration-200 ring-1 ring-black/5 overflow-hidden flex flex-col">
+                    <div class="relative w-full h-40 sm:h-48 md:h-56 overflow-hidden">
+                        <img src="assets/images/artifact1/00-thumbnail.webp" alt="Inventory Tracking App — login screen"
+                            loading="lazy" decoding="async"
+                            class="absolute inset-0 w-full h-full object-cover object-center" />
                     </div>
+
                     <div class="p-5 grow">
                         <h3 class="text-lg font-semibold">Inventory Tracking App</h3>
-                        <p class="mt-1 text-sm text-gray-600">The Android Inventory Tracking Application began as a
-                            simple inventory management tool developed in Java using a local SQLite database. I enhanced
-                            the project in two major phases to improve its architecture and expand its functionality.
+
+                        <ul class="mt-2 mb-2 flex flex-wrap gap-2 text-xs" aria-label="Technologies used">
+                            <li
+                                class="inline-flex items-center gap-1 rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200 px-2 py-1">
+                                <span>Android</span>
+                            </li>
+                            <li
+                                class="inline-flex items-center gap-1 rounded-full bg-amber-50 text-amber-700 ring-1 ring-amber-200 px-2 py-1">
+                                <span>Java</span>
+                            </li>
+                            <li
+                                class="inline-flex items-center gap-1 rounded-full bg-sky-50 text-sky-700 ring-1 ring-sky-200 px-2 py-1">
+                                <span>SQLite</span>
+                            </li>
+                        </ul>
+
+                        <p class="mt-1 text-sm text-gray-600">
+                            The Android Inventory Tracking Application began as a simple inventory management tool
+                            developed in Java using a local SQLite database.
+                            I enhanced the project in two major phases to improve its architecture and expand its
+                            functionality.
                         </p>
+
                         <div class="mt-3 flex gap-3">
                             <button type="button"
                                 class="px-3 py-2 text-sm rounded-lg bg-gray-900 text-white preview-btn"
@@ -70,22 +88,58 @@
                                 data-gallery-manifest="assets/images/artifact1/manifest.json">
                                 View
                             </button>
-
-                            <a href="#" class="px-3 py-2 text-sm rounded-lg border">Repo</a>
+                            <a href="https://github.com/Sarkis-A/Inventory-Tracking-App/tree/main/Inventory%20App%20(Legacy)"
+                                class="px-3 py-2 text-sm rounded-lg border">Repo</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Artifact Card 2 -->
-                <article class="bg-white rounded-2xl shadow ring-1 ring-black/5 overflow-hidden flex flex-col">
-                    <div class="h-40 bg-gradient-to-r from-rose-600 to-orange-500"></div>
+                <!-- Artifact Card 2 (thumbnail not clickable) -->
+                <article
+                    class="bg-white rounded-2xl shadow-lg md:shadow-xl hover:shadow-2xl transition-shadow duration-200 ring-1 ring-black/5 overflow-hidden flex flex-col">
+                    <!-- Simple middle-cropped thumbnail (no link) -->
+                    <div class="relative w-full h-40 sm:h-48 md:h-56 overflow-hidden">
+                        <img src="assets/images/artifact2/00-thumbnail.webp" alt="Artifact #2 — thumbnail"
+                            loading="lazy" decoding="async"
+                            class="absolute inset-0 w-full h-full object-cover object-center" />
+                    </div>
+
                     <div class="p-5 grow">
-                        <h3 class="text-lg font-semibold">Artifact #2</h3>
-                        <p class="mt-1 text-sm text-gray-600">Short description of the artifact.</p>
+                        <h3 class="text-lg font-semibold">Advising Assistance Program</h3>
+
+                        <ul class="mt-2 mb-2 flex flex-wrap gap-2 text-xs" aria-label="Technologies used">
+                            <li
+                                class="inline-flex items-center gap-1 rounded-full bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200 px-2 py-1">
+                                <span>C++</span>
+                            </li>
+                            <li
+                                class="inline-flex items-center gap-1 rounded-full bg-fuchsia-50 text-fuchsia-700 ring-1 ring-fuchsia-200 px-2 py-1">
+                                <span>Data Structures</span>
+                            </li>
+                            <li
+                                class="inline-flex items-center gap-1 rounded-full bg-amber-50 text-amber-700 ring-1 ring-amber-200 px-2 py-1">
+                                <span>Hash Table</span>
+                            </li>
+                            <li
+                                class="inline-flex items-center gap-1 rounded-full bg-slate-50 text-slate-700 ring-1 ring-slate-200 px-2 py-1">
+                                <span>File I/O</span>
+                            </li>
+                        </ul>
+
+                        <p class="mt-1 text-sm text-gray-600">
+                            The Advising Assistance Program was developed in C++ to help users efficiently store and
+                            retrieve course information. Initially, the program used a hash table to manage this data,
+                            which performed well on small datasets but became less effective as data volume increased.
+                        </p>
+
                         <div class="mt-3 flex gap-3">
-                            <a href="enhancements/enhancement2.html"
-                                class="px-3 py-2 text-sm rounded-lg bg-gray-900 text-white">View</a>
-                            <a href="#" class="px-3 py-2 text-sm rounded-lg border">Repo</a>
+                            <button type="button"
+                                class="px-3 py-2 text-sm rounded-lg bg-gray-900 text-white preview-btn"
+                                data-alt="Artifact #2 screenshots"
+                                data-gallery-manifest="assets/images/artifact2/manifest.json">
+                                View
+                            </button>
+                            <a href="https://github.com/Sarkis-A/Advising-Assistance-Program/tree/main/Advising%20Assistance%20Program%20(Legacy)" class="px-3 py-2 text-sm rounded-lg border">Repo</a>
                         </div>
                     </div>
                 </article>
@@ -114,7 +168,7 @@
         <!-- Enhancements: single-card large carousel -->
         <section id="enhancements" class="py-10 relative">
             <div data-include="fragments/enhancements.html"></div>
-            
+
             <div class="swiper enhancements-swiper max-w-4xl mx-auto" aria-label="Enhancements carousel">
                 <div class="swiper-wrapper">
                     <!-- Enhancement 1 -->
