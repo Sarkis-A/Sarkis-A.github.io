@@ -1,0 +1,75 @@
+html, body { overflow-x: hidden; }
+
+/* Allow arrows to breathe and avoid clipping */
+.enhancements-swiper {
+  position: relative;
+  overflow: visible;
+  /* <- prevents arrows from being cut off */
+  padding-inline: 2.5rem;
+  /* room for arrows inside the container */
+}
+
+/* Circular chevrons */
+.enhancements-swiper .swiper-button-prev,
+.enhancements-swiper .swiper-button-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
+  color: #1f2937;
+  /* gray-800 */
+  z-index: 20;
+  /* above slides & dots */
+  transition: transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+
+/* Keep arrows inside the padded area so they float over the card */
+.enhancements-swiper .swiper-button-prev {
+  left: 0.5rem;
+}
+
+.enhancements-swiper .swiper-button-next {
+  right: 0.5rem;
+}
+
+/* Larger chevron glyphs */
+.enhancements-swiper .swiper-button-prev::after,
+.enhancements-swiper .swiper-button-next::after {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Hover pop */
+.enhancements-swiper .swiper-button-prev:hover,
+.enhancements-swiper .swiper-button-next:hover {
+  background: rgba(31, 41, 55, .95);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Dots safely below */
+.enhancements-swiper .swiper-pagination {
+  position: relative !important;
+  margin-top: 1rem;
+  z-index: 10;
+}
+
+/* Mobile: snug to edges */
+@media (max-width: 640px) {
+  .enhancements-swiper {
+    padding-inline: 1.25rem;
+  }
+
+  .enhancements-swiper .swiper-button-prev {
+    left: 0.25rem;
+  }
+
+  .enhancements-swiper .swiper-button-next {
+    right: 0.25rem;
+  }
+}

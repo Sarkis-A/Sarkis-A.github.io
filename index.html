@@ -2,105 +2,217 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Austin Sarkis • ePortfolio</title>
-  <meta name="description" content="Projects and writing by Austin Sarkis — software developer.">
-  <meta property="og:title" content="Austin Sarkis • ePortfolio">
-  <meta property="og:description" content="Selected projects across mobile, web, and algorithms.">
-  <meta property="og:type" content="website">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Austin Sarkis • ePortfolio</title>
+    <meta name="description" content="Projects and writing by Austin Sarkis — software developer.">
+    <meta property="og:title" content="Austin Sarkis • ePortfolio">
+    <meta property="og:description" content="Selected projects across mobile, web, and algorithms.">
+    <meta property="og:type" content="website">
 
-  <!-- Favicon -->
-  <link rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f2937'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='36' fill='white'%3EAS%3C/text%3E%3C/svg%3E">
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f2937'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='36' fill='white'%3EAS%3C/text%3E%3C/svg%3E">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Swiper (for carousels) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Swiper (for Enhancements carousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Site header/footer loader -->
-  <script defer src="assets/js/site.js"></script>
+    <!-- Site header/footer + fragment loader -->
+    <script defer src="assets/js/site.js"></script>
+    <script defer src="assets/js/includes.js"></script>
+    <script defer src="assets/js/preview-expand.js"></script>
 
-  <!-- Section include loader -->
-  <script defer src="assets/js/includes.js"></script>
 
-  <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 
 <body class="bg-gray-50 text-gray-900">
 
-  <!-- Header injected by site.js -->
-  <div data-include="header"></div>
+    <!-- Header injected by site.js -->
+    <div data-include="header"></div>
 
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Each section pulls in its fragment -->
-    <section id="welcome" data-include="fragments/welcome.html" class="pt-10 pb-6"></section>
-    <section id="introduction" data-include="fragments/introduction.html" class="py-8"></section>
-    <section id="growth" data-include="fragments/growth.html" class="py-8"></section>
-    <section id="competencies" data-include="fragments/competencies.html" class="py-8"></section>
-    <section id="artifacts" data-include="fragments/artifacts.html" class="py-10"></section>
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Code Review section -->
-    <section id="code-review" class="py-10">
-      <div data-include="fragments/code-review-top.html"></div>
+        <!-- Text sections via fragments -->
+        <section id="welcome" data-include="fragments/welcome.html" class="pt-10 pb-6"></section>
+        <section id="introduction" data-include="fragments/introduction.html" class="py-8"></section>
+        <section id="growth" data-include="fragments/growth.html" class="py-8"></section>
+        <section id="competencies" data-include="fragments/competencies.html" class="py-8"></section>
 
-      <!-- YouTube video -->
-      <div class="mt-6">
-        <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-black/5 bg-black">
-          <iframe class="w-full h-full"
-            src="https://www.youtube.com/embed/Q7jSqqBDJf8"
-            title="Code Review Process"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
+        <!-- Artifacts: two cards side-by-side (no carousel) -->
+        <section id="artifacts" class="py-10">
+            <h2 class="text-2xl font-bold mb-4">Artifacts</h2>
+            <div class="grid gap-6 sm:grid-cols-2">
+                <!-- Artifact Card 1 -->
+                <article class="bg-white rounded-2xl shadow ring-1 ring-black/5 overflow-hidden flex flex-col">
+                    <!-- Cropped by default; expands after 3s hover -->
+                    <div class="img-window relative overflow-hidden w-full" data-hover-expand>
+                        <a href="assets/images/artifact1/01-login.webp" target="_blank" rel="noopener" class="block">
+                            <div class="w-full h-40 sm:h-48 md:h-56 bg-center bg-cover"
+                                style="background-image: url('assets/images/artifact1/00-thumbnail.webp');">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="p-5 grow">
+                        <h3 class="text-lg font-semibold">Inventory Tracking App</h3>
+                        <p class="mt-1 text-sm text-gray-600">The Android Inventory Tracking Application began as a
+                            simple inventory management tool developed in Java using a local SQLite database. I enhanced
+                            the project in two major phases to improve its architecture and expand its functionality.
+                        </p>
+                        <div class="mt-3 flex gap-3">
+                            <button type="button"
+                                class="px-3 py-2 text-sm rounded-lg bg-gray-900 text-white preview-btn"
+                                data-alt="Artifact #1 screenshots"
+                                data-gallery-manifest="assets/images/artifact1/manifest.json">
+                                View
+                            </button>
 
-      <div data-include="fragments/code-review-bottom.html"></div>
-    </section>
+                            <a href="#" class="px-3 py-2 text-sm rounded-lg border">Repo</a>
+                        </div>
+                    </div>
+                </article>
 
-    <section id="enhancements" data-include="fragments/enhancements.html" class="py-10"></section>
-    <section id="reflection" data-include="fragments/reflection.html" class="py-10 pb-16"></section>
-  </main>
+                <!-- Artifact Card 2 -->
+                <article class="bg-white rounded-2xl shadow ring-1 ring-black/5 overflow-hidden flex flex-col">
+                    <div class="h-40 bg-gradient-to-r from-rose-600 to-orange-500"></div>
+                    <div class="p-5 grow">
+                        <h3 class="text-lg font-semibold">Artifact #2</h3>
+                        <p class="mt-1 text-sm text-gray-600">Short description of the artifact.</p>
+                        <div class="mt-3 flex gap-3">
+                            <a href="enhancements/enhancement2.html"
+                                class="px-3 py-2 text-sm rounded-lg bg-gray-900 text-white">View</a>
+                            <a href="#" class="px-3 py-2 text-sm rounded-lg border">Repo</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-  <!-- Footer injected by site.js -->
-  <div data-include="footer"></div>
+        <!-- Code Review Process -->
+        <section id="code-review" class="py-10">
+            <div data-include="fragments/code-review-top.html"></div>
 
-  <!-- Swiper initialization -->
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      // Artifacts carousel (2 cards)
-      if (document.querySelector('.artifacts-swiper')) {
-        new Swiper('.artifacts-swiper', {
-          slidesPerView: 1,
-          spaceBetween: 16,
-          loop: true,
-          pagination: { el: '.swiper-pagination', clickable: true },
-          navigation: { nextEl: '.art-next', prevEl: '.art-prev' },
-          breakpoints: { 768: { slidesPerView: 2 } }
+            <!-- YouTube video -->
+            <div class="mt-6">
+                <div class="aspect-video rounded-xl overflow-hidden ring-1 ring-black/5 bg-black">
+                    <iframe class="w-full h-full"
+                        src="https://www.youtube-nocookie.com/embed/Q7jSqqBDJf8?rel=0&modestbranding=1"
+                        title="Artifact Code Review" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div data-include="fragments/code-review-bottom.html"></div>
+        </section>
+
+        <!-- Enhancements: single-card large carousel -->
+        <section id="enhancements" class="py-10 relative">
+            <div data-include="fragments/enhancements.html"></div>
+            
+            <div class="swiper enhancements-swiper max-w-4xl mx-auto" aria-label="Enhancements carousel">
+                <div class="swiper-wrapper">
+                    <!-- Enhancement 1 -->
+                    <div class="swiper-slide p-2 sm:p-4">
+                        <article class="bg-white rounded-3xl shadow-lg ring-1 ring-black/5 overflow-hidden">
+                            <div class="h-56 sm:h-64 bg-gradient-to-r from-emerald-600 to-lime-500"></div>
+                            <div class="p-6 sm:p-8">
+                                <h3 class="text-2xl font-semibold">Enhancement 1</h3>
+                                <p class="mt-2 text-gray-600">
+                                    Brief description of the improvement and its impact.
+                                </p>
+                                <div class="mt-4 flex gap-3">
+                                    <a href="enhancements/enhancement1.html"
+                                        class="px-4 py-2 rounded-lg bg-gray-900 text-white">Narrative</a>
+                                    <a href="#" class="px-4 py-2 rounded-lg border">Repo</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Enhancement 2 -->
+                    <div class="swiper-slide p-2 sm:p-4">
+                        <article class="bg-white rounded-3xl shadow-lg ring-1 ring-black/5 overflow-hidden">
+                            <div class="h-56 sm:h-64 bg-gradient-to-r from-sky-600 to-cyan-500"></div>
+                            <div class="p-6 sm:p-8">
+                                <h3 class="text-2xl font-semibold">Enhancement 2</h3>
+                                <p class="mt-2 text-gray-600">
+                                    Brief description of the improvement and its impact.
+                                </p>
+                                <div class="mt-4 flex gap-3">
+                                    <a href="enhancements/enhancement2.html"
+                                        class="px-4 py-2 rounded-lg bg-gray-900 text-white">Narrative</a>
+                                    <a href="#" class="px-4 py-2 rounded-lg border">Repo</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Enhancement 3 -->
+                    <div class="swiper-slide p-2 sm:p-4">
+                        <article class="bg-white rounded-3xl shadow-lg ring-1 ring-black/5 overflow-hidden">
+                            <div class="h-56 sm:h-64 bg-gradient-to-r from-purple-600 to-fuchsia-500"></div>
+                            <div class="p-6 sm:p-8">
+                                <h3 class="text-2xl font-semibold">Enhancement 3</h3>
+                                <p class="mt-2 text-gray-600">
+                                    Brief description of the improvement and its impact.
+                                </p>
+                                <div class="mt-4 flex gap-3">
+                                    <a href="enhancements/enhancement3.html"
+                                        class="px-4 py-2 rounded-lg bg-gray-900 text-white">Narrative</a>
+                                    <a href="#" class="px-4 py-2 rounded-lg border">Repo</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Pagination (dots) -->
+                <div class="swiper-pagination mt-4"></div>
+
+                <!-- Chevron Arrows -->
+                <div class="swiper-button-prev text-gray-800"></div>
+                <div class="swiper-button-next text-gray-800"></div>
+            </div>
+        </section>
+
+        <!-- Reflection via fragment -->
+        <section id="reflection" data-include="fragments/reflection.html" class="py-10 pb-16"></section>
+    </main>
+
+    <!-- Footer injected by site.js -->
+    <div data-include="footer"></div>
+
+    <!-- Preview overlay root (starts empty) -->
+    <div id="preview-root" aria-hidden="true"></div>
+
+    <!-- Swiper init (Enhancements only) -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            new Swiper('.enhancements-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 24,
+                loop: false,
+                centeredSlides: false,
+                initialSlide: 0,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                // Optional: make it feel firm at the edges
+                // resistanceRatio: 0.85,
+            });
         });
-      }
-
-      // Enhancements carousel (3 cards)
-      if (document.querySelector('.enhancements-swiper')) {
-        new Swiper('.enhancements-swiper', {
-          slidesPerView: 1,
-          spaceBetween: 16,
-          loop: true,
-          pagination: { el: '.swiper-pagination', clickable: true },
-          navigation: { nextEl: '.enh-next', prevEl: '.enh-prev' },
-          breakpoints: {
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 }
-          }
-        });
-      }
-    });
-  </script>
+    </script>
 </body>
 
 </html>
