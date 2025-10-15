@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Austin Sarkis • ePortfolio</title>
-    <meta name="description" content="Projects and writing by Austin Sarkis — software developer.">
+    <meta name="description" content="Projects by Austin Sarkis — software developer.">
     <meta property="og:title" content="Austin Sarkis • ePortfolio">
     <meta property="og:description" content="Selected projects across mobile, web, and algorithms.">
     <meta property="og:type" content="website">
@@ -25,6 +25,7 @@
     <script defer src="assets/js/site.js"></script>
     <script defer src="assets/js/includes.js"></script>
     <script defer src="assets/js/preview-expand.js"></script>
+    <script defer src="assets/js/size-sync.js"></script>
 
 
     <link rel="stylesheet" href="assets/css/custom.css">
@@ -49,7 +50,7 @@
             <div class="grid gap-6 sm:grid-cols-2">
                 <!-- Artifact Card 1 (thumbnail not clickable) -->
                 <article
-                    class="bg-white rounded-2xl shadow-lg md:shadow-xl hover:shadow-2xl transition-shadow duration-200 ring-1 ring-black/5 overflow-hidden flex flex-col">
+                    class="card-eq bg-white rounded-2xl shadow-lg md:shadow-xl hover:shadow-2xl transition-shadow duration-200 ring-1 ring-black/5 overflow-hidden flex flex-col">
                     <div class="relative w-full h-40 sm:h-48 md:h-56 overflow-hidden">
                         <img src="assets/images/artifact1/00-thumbnail.webp" alt="Inventory Tracking App — login screen"
                             loading="lazy" decoding="async"
@@ -96,7 +97,7 @@
 
                 <!-- Artifact Card 2 (thumbnail not clickable) -->
                 <article
-                    class="bg-white rounded-2xl shadow-lg md:shadow-xl hover:shadow-2xl transition-shadow duration-200 ring-1 ring-black/5 overflow-hidden flex flex-col">
+                    class="card-eq bg-white rounded-2xl shadow-lg md:shadow-xl hover:shadow-2xl transition-shadow duration-200 ring-1 ring-black/5 overflow-hidden flex flex-col">
                     <!-- Simple middle-cropped thumbnail (no link) -->
                     <div class="relative w-full h-40 sm:h-48 md:h-56 overflow-hidden">
                         <img src="assets/images/artifact2/00-thumbnail.webp" alt="Artifact #2 — thumbnail"
@@ -117,7 +118,7 @@
                                 <span>Data Structures</span>
                             </li>
                             <li
-                                class="inline-flex items-center gap-1 rounded-full bg-amber-50 text-amber-700 ring-1 ring-amber-200 px-2 py-1">
+                                class="inline-flex items-center gap-1 rounded-full bg-rose-50 text-rose-700 ring-1 ring-rose-200 px-2 py-1">
                                 <span>Hash Table</span>
                             </li>
                             <li
@@ -139,7 +140,8 @@
                                 data-gallery-manifest="assets/images/artifact2/manifest.json">
                                 View
                             </button>
-                            <a href="https://github.com/Sarkis-A/Advising-Assistance-Program/tree/main/Advising%20Assistance%20Program%20(Legacy)" class="px-3 py-2 text-sm rounded-lg border">Repo</a>
+                            <a href="https://github.com/Sarkis-A/Advising-Assistance-Program/tree/main/Advising%20Assistance%20Program%20(Legacy)"
+                                class="px-3 py-2 text-sm rounded-lg border">Repo</a>
                         </div>
                     </div>
                 </article>
@@ -173,12 +175,37 @@
                 <div class="swiper-wrapper">
                     <!-- Enhancement 1 -->
                     <div class="swiper-slide p-2 sm:p-4">
-                        <article class="bg-white rounded-3xl shadow-lg ring-1 ring-black/5 overflow-hidden">
+                        <article class="card-eq  rounded-3xl shadow-lg ring-1 ring-black/5 overflow-hidden">
                             <div class="h-56 sm:h-64 bg-gradient-to-r from-emerald-600 to-lime-500"></div>
                             <div class="p-6 sm:p-8">
-                                <h3 class="text-2xl font-semibold">Enhancement 1</h3>
+                                <h3 class="text-2xl font-semibold">Software Engineering and Design</h3>
+
+                                <!-- Pills -->
+                                <ul class="mt-2 mb-2 flex flex-wrap gap-2 text-xs" aria-label="Technologies used">
+                                    <li
+                                        class="inline-flex items-center gap-1 rounded-full bg-violet-50 text-violet-700 ring-1 ring-violet-200 px-2 py-1">
+                                        <span>Kotlin</span>
+                                    </li>
+                                    <li
+                                        class="inline-flex items-center gap-1 rounded-full bg-cyan-50 text-cyan-700 ring-1 ring-cyan-200 px-2 py-1">
+                                        <span>UI/UX</span>
+                                    </li>
+                                    <li
+                                        class="inline-flex items-center gap-1 rounded-full bg-yellow-50 text-yellow-700 ring-1 ring-yellow-200 px-2 py-1">
+                                        <span>Firebase Auth</span>
+                                    </li>
+                                    <li
+                                        class="inline-flex items-center gap-1 rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200 px-2 py-1">
+                                        <span>Android</span>
+                                    </li>
+                                </ul>
+
                                 <p class="mt-2 text-gray-600">
-                                    Brief description of the improvement and its impact.
+                                    In this enhancement, I migrated my entire Android application from Java to Kotlin
+                                    and redesigned the user interface to be more intuitive and modern. I improved code
+                                    readability by modularizing and refining naming conventions, making the program more
+                                    maintainable and scalable. I also implemented Firebase Authentication, which laid
+                                    the groundwork for future cloud integration and more secure user access.
                                 </p>
                                 <div class="mt-4 flex gap-3">
                                     <a href="enhancements/enhancement1.html"
@@ -191,12 +218,35 @@
 
                     <!-- Enhancement 2 -->
                     <div class="swiper-slide p-2 sm:p-4">
-                        <article class="bg-white rounded-3xl shadow-lg ring-1 ring-black/5 overflow-hidden">
+                        <article class="card-eq  rounded-3xl shadow-lg ring-1 ring-black/5 overflow-hidden">
                             <div class="h-56 sm:h-64 bg-gradient-to-r from-sky-600 to-cyan-500"></div>
                             <div class="p-6 sm:p-8">
-                                <h3 class="text-2xl font-semibold">Enhancement 2</h3>
+                                <h3 class="text-2xl font-semibold">Algorithms and Data Structures</h3>
+
+                                <!-- Pills -->
+                                <ul class="mt-2 mb-2 flex flex-wrap gap-2 text-xs" aria-label="Technologies used">
+                                    <li
+                                        class="inline-flex items-center gap-1 rounded-full bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200 px-2 py-1">
+                                        <span>C++</span>
+                                    </li>
+                                    <li
+                                        class="inline-flex items-center gap-1 rounded-full bg-red-50 text-red-700 ring-1 ring-red-200 px-2 py-1">
+                                        <span>Red-Black Tree</span>
+                                    </li>
+                                    <li
+                                        class="inline-flex items-center gap-1 rounded-full bg-lime-50 text-lime-700 ring-1 ring-lime-200 px-2 py-1">
+                                        <span>Benchmarking</span>
+                                    </li>
+                                </ul>
+
                                 <p class="mt-2 text-gray-600">
-                                    Brief description of the improvement and its impact.
+                                    For this enhancement, I replaced the hash table in my Assistance Advising Program
+                                    with a Red-Black Tree. This advanced self-balancing binary search tree maintains
+                                    performance consistency through rotations and recoloring. This implementation
+                                    provided faster, more reliable lookups even as the dataset grew. I also refactored
+                                    the codebase into multiple source and header files, improving readability and
+                                    maintainability. Benchmark testing showed measurable improvements in both efficiency
+                                    and scalability.
                                 </p>
                                 <div class="mt-4 flex gap-3">
                                     <a href="enhancements/enhancement2.html"
@@ -209,12 +259,39 @@
 
                     <!-- Enhancement 3 -->
                     <div class="swiper-slide p-2 sm:p-4">
-                        <article class="bg-white rounded-3xl shadow-lg ring-1 ring-black/5 overflow-hidden">
+                        <article class="card-eq  rounded-3xl shadow-lg ring-1 ring-black/5 overflow-hidden">
                             <div class="h-56 sm:h-64 bg-gradient-to-r from-purple-600 to-fuchsia-500"></div>
                             <div class="p-6 sm:p-8">
-                                <h3 class="text-2xl font-semibold">Enhancement 3</h3>
+                                <h3 class="text-2xl font-semibold">Databases</h3>
+
+                                <!-- Pills -->
+                                <ul class="mt-2 mb-2 flex flex-wrap gap-2 text-xs" aria-label="Technologies used">
+                                    <li
+                                        class="inline-flex items-center gap-1 rounded-full bg-orange-50 text-orange-700 ring-1 ring-orange-200 px-2 py-1">
+                                        <span>Cloud Firestore</span>
+                                    </li>
+                                    <li
+                                        class="inline-flex items-center gap-1 rounded-full bg-stone-50 text-stone-700 ring-1 ring-stone-200 px-2 py-1">
+                                        <span>Security Rules</span>
+                                    </li>
+                                    <li
+                                        class="inline-flex items-center gap-1 rounded-full bg-blue-50 text-blue-700 ring-1 ring-blue-200 px-2 py-1">
+                                        <span>Realtime Sync</span>
+                                    </li>
+                                    <li
+                                        class="inline-flex items-center gap-1 rounded-full bg-purple-50 text-purple-700 ring-1 ring-purple-200 px-2 py-1">
+                                        <span>Integration</span>
+                                    </li>
+                                </ul>
+
                                 <p class="mt-2 text-gray-600">
-                                    Brief description of the improvement and its impact.
+                                    For this enhancement, we continued building on the first enhancement, focusing more
+                                    on the databases category. I integrated Cloud Firestore to enable real-time
+                                    synchronization and cloud-based collaboration. This transformed the app from a
+                                    single-user local system into a shared environment where users can manage group
+                                    inventories with unique access permissions. To ensure data security, I wrote
+                                    detailed Firestore Security Rules that define role-based permissions and validate
+                                    user actions before allowing database operations.
                                 </p>
                                 <div class="mt-4 flex gap-3">
                                     <a href="enhancements/enhancement3.html"
