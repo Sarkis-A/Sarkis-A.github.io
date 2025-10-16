@@ -7,7 +7,7 @@ const Header = `
       <li><a href="/enhancements/enhancement1.html" class="hover:underline">Enhancements</a></li>
       <li><a href="/about.html" class="hover:underline">About</a></li>
       <li><a href="/contact.html" class="hover:underline">Contact</a></li>
-      <li><a href="https://github.com/USERNAME" target="_blank" rel="noopener" class="text-gray-600 hover:text-gray-900" aria-label="GitHub">GitHub</a></li>
+      <li><a href="https://github.com/Sarkis-A" target="_blank" rel="noopener" class="text-gray-600 hover:text-gray-900" aria-label="GitHub">GitHub</a></li>
     </ul>
   </nav>
 </header>`;

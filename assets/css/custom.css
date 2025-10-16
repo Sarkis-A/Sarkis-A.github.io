@@ -73,3 +73,6 @@ html, body { overflow-x: hidden; }
     right: 0.25rem;
   }
 }
+
+/* soft drop shadow so the outline doesn't get lost on gradients */
+.icon-watermark { filter: drop-shadow(0 2px 8px rgba(0,0,0,.35)); }
