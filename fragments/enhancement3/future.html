@@ -1,0 +1,10 @@
+<p class="text-gray-800 leading-7">
+    One additional challenge I encountered during development was the lack of middleware functionality between the
+    client and the database. Currently, the app communicates directly with Firestore, which, while efficient for
+    rapid prototyping, limits flexibility and complicates the handling of multi-step operations or advanced
+    security logic. Without a middleware layer, such as Firebase Cloud Functions, certain actions—like cascading
+    deletions, role changes, or complex validations—must be managed entirely on the client side, increasing the
+    potential for inconsistencies and security risks. A future upgrade could introduce middleware services to
+    handle these operations on the server side, improving both reliability and security by centralizing logic and
+    reducing client exposure to sensitive database operations.
+</p>

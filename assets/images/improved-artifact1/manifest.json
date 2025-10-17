@@ -1,0 +1,18 @@
+{
+  "title": "Improved Artifact #1 screenshots",
+  "images": [
+    "01-login.webp",
+    "02-login-google.webp",
+    "02.5-guest-inv.webp",
+    "03-dashboard.webp",
+    "04-add.webp",
+    "05-edit.webp",
+    "06-settings.webp",
+    "07-settings-group.webp",
+    "08-group-inv.webp",
+    "09-mbr-add-edit.webp",
+    "10-group-inv-list.webp",
+    "11-group-inv-list.webp",
+    "12-group-inv-mbr.webp"
+  ]
+}

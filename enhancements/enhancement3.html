@@ -4,19 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Enhancement 3 • Databases — Cloud Firestore Integration</title>
+    <title>Databases Enhancement</title>
     <meta name="description"
-        content="Enhancement 3 narrative: transforming a local inventory app into a cloud-connected, collaborative system with Firebase Auth and Cloud Firestore.">
-
-    <!-- Tailwind (CDN) -->
+        content="Databases Enhancement narrative: transforming a local inventory app into a cloud-connected, collaborative system with Firebase Auth and Cloud Firestore.">
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script defer src="/assets/js/site.js"></script>
     <script defer src="/assets/js/includes.js"></script>
     <script defer src="/assets/js/preview-expand.js"></script>
     <script defer src="/assets/js/toc-float-spy.js"></script>
-
-
     <link rel="stylesheet" href="/assets/css/custom.css" />
 </head>
 
@@ -44,7 +39,6 @@
                 support multi-user collaboration, real-time sync, and role-based access control.
             </p>
 
-            <!-- Tech pills -->
             <ul class="mt-4 flex flex-wrap gap-2 text-xs" aria-label="Technologies">
                 <li
                     class="inline-flex items-center gap-1 rounded-full bg-orange-50 text-orange-700 ring-1 ring-orange-200 px-2 py-1">
@@ -75,36 +69,24 @@
             <button type="button"
                 class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-900 text-white preview-btn"
                 data-alt="Final product gallery"
-                data-gallery-manifest="/assets/images/enhancement3/gallery/manifest.json">
+                data-gallery-manifest="/assets/images/improved-artifact1/manifest.json">
                 <img src="/assets/icons/camera.svg" alt="" aria-hidden="true" class="w-4 h-4" />
                 View Final Product Gallery
             </button>
         </header>
 
-        <!-- Layout: main narrative + sticky ToC -->
+        <!-- Main content + ToC -->
         <div class="lg:grid lg:grid-cols-[1fr,280px] lg:gap-12 lg:items-start">
             <article class="max-w-none">
-                <!-- Overview & Artifact Selection -->
+                <!-- Overview -->
                 <section id="overview" class="scroll-mt-24">
                     <h2
                         class="mt-8 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
                         Overview &amp; Artifact Selection
                     </h2>
 
-                    <p class="mt-4 text-gray-800 leading-7">
-                        The artifact I selected for this enhancement is an Android Inventory Tracking Application
-                        originally
-                        developed in CS 360: Mobile Architecture and Programming. The app was initially created as a
-                        standalone inventory manager, allowing users to add, edit, and delete items stored locally on
-                        their
-                        devices. It utilized basic on-device persistence to maintain inventory data and provided a
-                        straightforward interface for single-user use. However, the original version lacked multi-user
-                        functionality, device synchronization, and secure access controls, making it an ideal candidate
-                        for
-                        enhancement within the Databases category.
-                    </p>
+                    <div data-include="/fragments/enhancement3/overview.html" class="mt-4"></div>
 
-                    <!-- Figure 1 -->
                     <figure class="not-prose my-6">
                         <img src="/assets/images/enhancement3/p1-original-db.png"
                             alt="Original local SQLite database and table definitions" width="807" height="1176"
@@ -116,44 +98,24 @@
                     </figure>
                 </section>
 
-                <!-- Why This Artifact -->
+                <!-- Rationale -->
                 <section id="rationale" class="scroll-mt-24">
                     <h2
                         class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
                         Why This Artifact
                     </h2>
-                    <p class="mt-4 text-gray-800 leading-7">
-                        I chose this artifact for inclusion in my ePortfolio because it best demonstrates my ability to
-                        design, enhance, and secure data-driven mobile applications. This project highlights my growth
-                        in
-                        software architecture, database integration, and cloud-based development.
-                    </p>
+                    <div data-include="/fragments/enhancement3/rationale.html" class="mt-4"></div>
                 </section>
 
-                <!-- Implementation Details -->
+                <!-- Implementation -->
                 <section id="implementation" class="scroll-mt-24">
                     <h2
                         class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
                         Implementation Details
                     </h2>
-                    <p class="mt-4 text-gray-800 leading-7">
-                        The enhancement involved transforming the local storage system into a cloud-connected
-                        application by
-                        using Firebase Authentication and Cloud Firestore. These integrations enabled per-user data
-                        storage,
-                        real-time synchronization, and secure access from multiple devices. Additionally, I implemented
-                        a
-                        group inventory system that allows multiple users to collaborate on shared inventories. Each
-                        group
-                        included role-based permissions—Owner, Admin, and Member—enforced by carefully structured
-                        Firestore
-                        Security Rules to protect data integrity and privacy. The app also gained functionalities like
-                        pagination and per-document listeners, which improved performance and scalability by loading
-                        data in
-                        small batches and updating only modified records rather than reloading entire datasets.
-                    </p>
 
-                    <!-- Figure 2 -->
+                    <div data-include="/fragments/enhancement3/implementation.html" class="mt-4"></div>
+
                     <figure class="not-prose my-6">
                         <img src="/assets/images/enhancement3/p2-cloud-auth-firestore.png"
                             alt="App migrated to Firebase Authentication and Cloud Firestore"
@@ -164,7 +126,6 @@
                         </figcaption>
                     </figure>
 
-                    <!-- Figure 3 -->
                     <figure class="not-prose my-6">
                         <div class="mx-auto max-w-[880px]">
                             <img src="/assets/images/enhancement3/p3-init-modes.png"
@@ -178,7 +139,6 @@
                         </figcaption>
                     </figure>
 
-                    <!-- Figure pair: pagination + per-doc listeners -->
                     <div class="not-prose my-6 grid gap-4 sm:grid-cols-2">
                         <figure>
                             <img src="/assets/images/enhancement3/p8-pagination-query.png"
@@ -199,34 +159,19 @@
                     </div>
                 </section>
 
-                <!-- Course Outcomes Alignment -->
+                <!-- Outcomes -->
                 <section id="outcomes" class="scroll-mt-24">
                     <h2
                         class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
                         Course Outcomes Alignment
                     </h2>
 
-                    <!-- Security Mindset & Privacy -->
                     <h3 id="security"
                         class="mt-6 text-xl font-semibold text-gray-900 pl-3 border-l-4 border-gray-300 scroll-mt-24">
                         Security Mindset &amp; Privacy
                     </h3>
-                    <p class="mt-3 text-gray-800 leading-7">
-                        This enhancement directly aligns with two key course outcomes. First, it demonstrates the
-                        ability to
-                        develop a security mindset that anticipates vulnerabilities and ensures privacy through secure
-                        software architecture. By implementing Firebase Authentication, I ensured that only verified
-                        users
-                        could access the database. The Firestore Security Rules I created followed the principle of
-                        least
-                        privilege, granting users access only to the data they owned or to the group inventories to
-                        which
-                        they were members. Each write operation was validated to enforce data type integrity and
-                        structural
-                        consistency, reducing the likelihood of unauthorized or malformed data.
-                    </p>
+                    <div data-include="/fragments/enhancement3/outcomes-security.html" class="mt-3"></div>
 
-                    <!-- Auth console -->
                     <figure class="not-prose my-6">
                         <img src="/assets/images/enhancement3/p4-auth-console.png"
                             alt="Firebase Authentication console showing registered user"
@@ -237,7 +182,6 @@
                         </figcaption>
                     </figure>
 
-                    <!-- Rules pair -->
                     <div class="not-prose my-6 grid gap-4 sm:grid-cols-2">
                         <figure>
                             <img src="/assets/images/enhancement3/p5-rules-data.png"
@@ -257,25 +201,12 @@
                         </figure>
                     </div>
 
-                    <!-- Collaborative Environments -->
                     <h3 id="collaboration"
                         class="mt-10 text-xl font-semibold text-gray-900 pl-3 border-l-4 border-gray-300 scroll-mt-24">
                         Collaborative Environments
                     </h3>
-                    <p class="mt-3 text-gray-800 leading-7">
-                        Second, this enhancement fully develops the outcome of employing strategies to build
-                        collaborative
-                        environments that enable diverse audiences to support organizational decision-making. By
-                        designing
-                        and implementing the group inventory system, I enabled teams of users to collaborate on shared
-                        datasets in real-time, each with clearly defined permissions and synchronized updates. This
-                        functionality supports organizational collaboration by ensuring data consistency across users
-                        and
-                        devices, making the app suitable for team-based inventory management in professional or business
-                        contexts.
-                    </p>
+                    <div data-include="/fragments/enhancement3/outcomes-collaboration.html" class="mt-3"></div>
 
-                    <!-- Group rules -->
                     <figure class="not-prose my-6">
                         <img src="/assets/images/enhancement3/p7-group-rules.png"
                             alt="Firestore Security Rules for groups: ownership, membership, and role changes"
@@ -287,59 +218,22 @@
                     </figure>
                 </section>
 
-                <!-- Challenges & Resolutions -->
+                <!-- Challenges -->
                 <section id="challenges" class="scroll-mt-24">
                     <h2
                         class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
                         Challenges &amp; Resolutions
                     </h2>
-                    <p class="mt-4 text-gray-800 leading-7">
-                        The process of enhancing this artifact helped me strengthen my skills in secure data handling,
-                        authentication workflows, and scalable mobile development. One of the significant lessons I
-                        learned
-                        was how to balance accessibility and security when designing cloud databases for collaborative
-                        applications. Implementing role-based access controls and writing Firestore rules that
-                        seamlessly
-                        integrate with client-side logic required careful planning and iterative testing to ensure
-                        seamless
-                        integration. Another challenge was optimizing performance for larger inventories. To maintain
-                        responsiveness without overwhelming the user interface or database, pagination and real-time
-                        listeners proved essential. Debugging asynchronous Firestore operations and resolving permission
-                        errors deepened my understanding of how cloud databases manage concurrency and synchronization.
-                        Throughout the enhancement process, I faced several significant challenges that enriched my
-                        understanding of mobile software design and cloud database management. A primary difficulty was
-                        configuring Firestore Security Rules to strike a balance between accessibility and protection
-                        effectively, ensuring that group owners, admins, and members had the appropriate level of access
-                        required careful logic structuring and repeated testing, as even minor rule errors could block
-                        valid
-                        operations or expose sensitive data. Debugging permission issues was often complex because
-                        Firestore's error messages are intentionally broad, necessitating a step-by-step approach to
-                        identify where access was being denied.
-                    </p>
+                    <div data-include="/fragments/enhancement3/challenges.html" class="mt-4"></div>
                 </section>
 
-                <!-- Future Work -->
+                <!-- Future -->
                 <section id="future" class="scroll-mt-24">
                     <h2
                         class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
                         Future Work
                     </h2>
-                    <p class="mt-4 text-gray-800 leading-7">
-                        One additional challenge I encountered during development was the lack of middleware
-                        functionality
-                        between the client and the database. Currently, the app communicates directly with Firestore,
-                        which,
-                        while efficient for rapid prototyping, limits flexibility and complicates the handling of
-                        multi-step
-                        operations or advanced security logic. Without a middleware layer, such as Firebase Cloud
-                        Functions,
-                        certain actions—like cascading deletions, role changes, or complex validations—must be managed
-                        entirely on the client side, increasing the potential for inconsistencies and security risks. A
-                        future upgrade could introduce middleware services to handle these operations on the server
-                        side,
-                        improving both reliability and security by centralizing logic and reducing client exposure to
-                        sensitive database operations.
-                    </p>
+                    <div data-include="/fragments/enhancement3/future.html" class="mt-4"></div>
                 </section>
 
                 <!-- Conclusion -->
@@ -348,44 +242,31 @@
                         class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
                         Conclusion
                     </h2>
-                    <p class="mt-4 text-gray-800 leading-7">
-                        Overall, this enhancement transformed the project from a simple local inventory manager into a
-                        robust, secure, and collaborative cloud-based system. It showcases my ability to design scalable
-                        applications that combine security, usability, and performance. This project represents a
-                        comprehensive demonstration of my growth as a developer capable of building and securing
-                        full-stack
-                        mobile solutions that function reliably in both individual and shared environments.
-                    </p>
+                    <div data-include="/fragments/enhancement3/conclusion.html" class="mt-4"></div>
 
                     <!-- CTAs -->
                     <div class="mt-10 flex flex-wrap gap-3">
                         <a href="/enhancements/enhancement2.html" class="px-4 py-2 rounded-lg border">← Prev
                             Enhancement</a>
-                        <a href="/enhancements/enhancement1.html" class="px-4 py-2 rounded-lg border">Next Enhancement
-                            →</a>
                         <a href="/" class="ml-auto px-4 py-2 rounded-lg bg-gray-900 text-white">Back to Home</a>
                     </div>
                 </section>
             </article>
 
-            <!-- ToC (fixed + clamped top to start at Overview) -->
+            <!-- ToC -->
             <aside class="hidden lg:block">
-                <nav id="toc-nav" class="fixed right-[calc((100vw-72rem)/2+2rem)] w-[280px]
-              rounded-xl border bg-white p-4 text-sm shadow-lg" aria-label="On this page">
+                <nav id="toc-nav"
+                    class="fixed right-[calc((100vw-72rem)/2+2rem)] w-[280px] rounded-xl border bg-white p-4 text-sm shadow-lg"
+                    aria-label="On this page">
                     <p class="font-semibold text-gray-800">On this page</p>
                     <ul class="mt-3 space-y-2">
-                        <li><a class="hover:underline text-gray-700" href="#overview">Overview &amp; Artifact
-                                Selection</a></li>
+                        <li><a class="hover:underline text-gray-700" href="#overview">Overview &amp; Artifact Selection</a></li>
                         <li><a class="hover:underline text-gray-700" href="#rationale">Why This Artifact</a></li>
-                        <li><a class="hover:underline text-gray-700" href="#implementation">Implementation Details</a>
-                        </li>
+                        <li><a class="hover:underline text-gray-700" href="#implementation">Implementation Details</a></li>
                         <li><a class="hover:underline text-gray-700" href="#outcomes">Course Outcomes Alignment</a></li>
-                        <li class="pl-3"><a class="hover:underline text-gray-600" href="#security">• Security Mindset
-                                &amp; Privacy</a></li>
-                        <li class="pl-3"><a class="hover:underline text-gray-600" href="#collaboration">• Collaborative
-                                Environments</a></li>
-                        <li><a class="hover:underline text-gray-700" href="#challenges">Challenges &amp; Resolutions</a>
-                        </li>
+                        <li class="pl-3"><a class="hover:underline text-gray-600" href="#security">• Security Mindset &amp; Privacy</a></li>
+                        <li class="pl-3"><a class="hover:underline text-gray-600" href="#collaboration">• Collaborative Environments</a></li>
+                        <li><a class="hover:underline text-gray-700" href="#challenges">Challenges &amp; Resolutions</a></li>
                         <li><a class="hover:underline text-gray-700" href="#future">Future Work</a></li>
                         <li><a class="hover:underline text-gray-700" href="#conclusion">Conclusion</a></li>
                     </ul>

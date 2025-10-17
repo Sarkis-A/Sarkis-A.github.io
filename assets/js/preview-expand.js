@@ -1,5 +1,43 @@
 // assets/js/preview-expand.js
 (() => {
+  // --- Lazy-load Swiper assets if not present ---
+  const SWIPER_CSS = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css";
+  const SWIPER_JS = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+
+  function ensureSwiper() {
+    return new Promise((resolve, reject) => {
+      // If Swiper already available, done.
+      if (window.Swiper) return resolve();
+
+      // Inject CSS once
+      if (!document.querySelector('link[data-swiper="css"]')) {
+        const l = document.createElement('link');
+        l.rel = 'stylesheet';
+        l.href = SWIPER_CSS;
+        l.setAttribute('data-swiper', 'css');
+        document.head.appendChild(l);
+      }
+
+      // Inject JS once
+      let s = document.querySelector('script[data-swiper="js"]');
+      if (s && s.dataset.loaded === "true") return resolve();
+
+      if (!s) {
+        s = document.createElement('script');
+        s.src = SWIPER_JS;
+        s.defer = true;
+        s.setAttribute('data-swiper', 'js');
+        document.head.appendChild(s);
+      }
+
+      s.addEventListener('load', () => {
+        s.dataset.loaded = "true";
+        resolve();
+      }, { once: true });
+      s.addEventListener('error', reject, { once: true });
+    });
+  }
+
   // Ensure a root exists to mount overlay
   const root = document.getElementById('preview-root') || (() => {
     const d = document.createElement('div');
@@ -8,45 +46,31 @@
     return d;
   })();
 
-  // === Inject styles for overlay + swiper gallery (no FLIP) ===
+  // Styles for overlay + swiper gallery
   const style = document.createElement('style');
   style.textContent = `
-    .preview-backdrop {
-      position: fixed; inset: 0; background: rgba(0,0,0,.55);
-      opacity: 0; transition: opacity .18s ease; z-index: 60;
-    }
+    .preview-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.55); opacity: 0; transition: opacity .18s ease; z-index: 60; }
     .preview-backdrop.show { opacity: 1; }
 
-    .preview-close {
-      position: fixed; top: 1rem; right: 1rem; z-index: 75;
-      background: rgba(255,255,255,.9); border: 0; border-radius: 9999px; width: 2.5rem; height: 2.5rem;
-      display: grid; place-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.18); cursor: pointer;
-    }
+    .preview-close { position: fixed; top: 1rem; right: 1rem; z-index: 75; background: rgba(255,255,255,.9); border: 0; border-radius: 9999px; width: 2.5rem; height: 2.5rem; display: grid; place-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.18); cursor: pointer; }
     .preview-close:focus { outline: 2px solid #111827; outline-offset: 2px; }
 
     .preview-stage { position: fixed; inset: 0; z-index: 70; display: grid; place-items: center; pointer-events: none; }
     .preview-frame { position: relative; pointer-events: auto; width: min(96vw, 1200px); max-height: 90vh; }
 
-    /* Swiper gallery */
     .preview-swiper { width: min(96vw, 1200px); height: auto; max-height: 90vh; }
     .preview-swiper .swiper-wrapper { align-items: center; }
-    .preview-swiper .swiper-slide {
-      display: grid; place-items: center;
-      padding: 8px 8px 28px 8px; /* room above dots */
-      box-sizing: border-box;
-    }
+    .preview-swiper .swiper-slide { display: grid; place-items: center; padding: 8px 8px 28px 8px; box-sizing: border-box; }
 
-    /* Images: NEVER upscale; only shrink to fit frame */
     .preview-swiper .swiper-slide img {
       max-width: 100%;
-      max-height: 80vh;   /* leave room for arrows/dots */
+      max-height: 80vh;
       width: auto;
       height: auto;
       border-radius: 1rem;
       box-shadow: 0 8px 24px rgba(0,0,0,.2);
     }
 
-    /* Controls */
     .preview-swiper .swiper-button-prev, .preview-swiper .swiper-button-next {
       color: #111827;
       width: 2.75rem; height: 2.75rem; border-radius: 9999px;
@@ -58,13 +82,28 @@
     }
     .preview-swiper .swiper-pagination-bullets { bottom: 6px !important; }
 
+    /* Pagination bullets (scoped to the preview modal) */
+    .preview-swiper .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background: #22d3ee;                 /* cyan-400 (inactive) */
+      opacity: 0.9;
+      box-shadow: 0 0 0 2px rgba(34,211,238,.25);
+      transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease;
+    }
+
+    .preview-swiper .swiper-pagination-bullet-active {
+      background: #f59e0b;                 /* amber-500 (active) */
+      opacity: 1;
+      transform: scale(1.25);
+      box-shadow: 0 0 0 3px rgba(245,158,11,.35);  /* stronger halo */
+    }
+
     body.preview-lock { overflow: hidden; }
   `;
   document.head.appendChild(style);
 
   // ----------- Gallery sources -----------
-
-  // Manifest JSON loader (no API, just a static file next to images)
   async function loadManifest(btn) {
     const url = btn.getAttribute('data-gallery-manifest');
     if (!url) return null;
@@ -73,7 +112,7 @@
       if (!res.ok) throw new Error(res.statusText);
       const json = await res.json();
       if (!json || !Array.isArray(json.images)) return null;
-      const base = url.replace(/[^/]+$/, ''); // folder of manifest
+      const base = url.replace(/[^/]+$/, '');
       const imgs = json.images.map(name => (name.match(/^https?:\/\//) ? name : base + name));
       return { title: json.title || '', images: imgs };
     } catch (e) {
@@ -82,7 +121,6 @@
     }
   }
 
-  // Inline list or single file
   function parseInline(btn) {
     const inline = (btn.getAttribute('data-gallery') || '')
       .split(',').map(s => s.trim()).filter(Boolean);
@@ -92,15 +130,12 @@
   }
 
   async function getGallery(btn) {
-    // Priority: manifest.json > inline list > single
     const manifest = await loadManifest(btn);
     if (manifest) return manifest;
-    const inline = parseInline(btn);
-    return inline;
+    return parseInline(btn);
   }
 
-  // ----------- Overlay (no FLIP) -----------
-
+  // ----------- Overlay -----------
   function openPreview(galleryUrls, alt) {
     const backdrop = document.createElement('div'); backdrop.className = 'preview-backdrop';
     const stage = document.createElement('div'); stage.className = 'preview-stage';
@@ -122,7 +157,6 @@
     closeBtn.setAttribute('aria-label', 'Close preview');
     closeBtn.innerHTML = '✕';
 
-    // Mount
     root.innerHTML = '';
     root.appendChild(backdrop);
     root.appendChild(stage);
@@ -130,11 +164,10 @@
     frame.appendChild(swiperEl);
     root.appendChild(closeBtn);
 
-    // Lock scroll and fade in
     document.body.classList.add('preview-lock');
     requestAnimationFrame(() => { backdrop.classList.add('show'); });
 
-    // Init Swiper
+    // Now safe to init Swiper (assets ensured beforehand)
     const sw = new Swiper(swiperEl, {
       slidesPerView: 1,
       spaceBetween: 16,
@@ -149,7 +182,6 @@
       keyboard: { enabled: true }
     });
 
-    // Close behavior
     function close() {
       backdrop.classList.remove('show');
       setTimeout(() => {
@@ -163,14 +195,19 @@
   }
 
   // ----------- Wiring -----------
-
   async function onPreviewClick(e) {
     e.preventDefault();
     const btn = e.currentTarget;
     const meta = await getGallery(btn);
     if (!meta || !meta.images || !meta.images.length) return;
-    const alt = meta.title || btn.getAttribute('data-alt') || 'Preview';
-    openPreview(meta.images, alt);
+
+    // Make sure Swiper is present before opening
+    try {
+      await ensureSwiper();
+      openPreview(meta.images, meta.title || btn.getAttribute('data-alt') || 'Preview');
+    } catch (err) {
+      console.error('Failed to load Swiper:', err);
+    }
   }
 
   function bindAll() {
