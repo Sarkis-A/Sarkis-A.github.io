@@ -1,5 +1,7 @@
 html, body { overflow-x: hidden; }
 
+html { scroll-behavior: smooth; }
+
 /* Allow arrows to breathe and avoid clipping */
 .enhancements-swiper {
   position: relative;
