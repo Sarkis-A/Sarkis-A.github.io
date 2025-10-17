@@ -1,0 +1,24 @@
+<p class="text-gray-800 leading-7">
+    I split the original single-file program into clear modules: Course (data model), FileLoader (CSV
+    parsing/validation), HashTable and RedBlackTree (encapsulated containers with the same public API), Benchmark
+    (timing harness), and Menu (CLI). This separation made dependencies explicit and allowed me to swap data structures
+    without touching the UI or the loader.
+
+    I replaced the hash table (which used linear probing and a simple hash function) with a Red-Black Tree to ensure
+    O(log n) operation times and to maintain sorted order automatically. The tree implements necessary operations, such
+    as rotations, recoloring, and standard insert/delete fix-up procedures, to maintain its balance. It provides methods
+    for Insert, Find/Contains, and InOrder traversal for displaying the data.
+
+    The loader normalizes course IDs (addressing case and spacing), validates prerequisite references, and streams
+    parsed records into the currently active data structure through a shared interface, ensuring that it remains
+    agnostic to the specific implementation.
+
+    For benchmarking, I've created a small harness that measures build time (for bulk inserts) and search time across
+    various workloads: "hit," "miss," and "mixed." The trials, dataset, and hit ratio are all configurable, and for
+    timing, I utilize a high-resolution clock, with the results reported alongside the dataset size.
+
+    Finally, the menu integrates all the components. It allows users to load data, print courses (in sorted order),
+    query a specific course, or conduct benchmarks on either the hash table, the Red-Black Tree, or both. Since the user
+    interface is designed to work with the standard interface, switching between data structures requires only a
+    one-line change in the main function.
+</p>

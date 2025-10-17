@@ -1,0 +1,16 @@
+{
+  "title": "Improved Artifact #2 screenshots",
+  "images": [
+    "01-menu.webp",
+    "02-load.webp",
+    "03-list-courses.webp",
+    "04-list-courses-end.webp",
+    "05-course-search.webp",
+    "06-benchmark-HT-sorted.webp",
+    "07-benchmark-RBT-sorted.webp",
+    "08-benchmark-BOTH-sorted.webp",
+    "09-benchmark-HT-mixed.webp",
+    "10-benchmark-RBT-mixed.webp",
+    "11-benchmark-BOTH-mixed.webp"
+  ]
+}
