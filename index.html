@@ -11,17 +11,16 @@
     <meta property="og:type" content="website">
 
     <!-- Favicon -->
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f2937'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='36' fill='white'%3EAS%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Swiper (for Enhancements carousel) -->
+    <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Site header/footer + fragment loader -->
+    <!-- Custom JS -->
     <script defer src="assets/js/site.js"></script>
     <script defer src="assets/js/includes.js"></script>
     <script defer src="assets/js/preview-expand.js"></script>
@@ -42,11 +41,11 @@
         <section id="growth" data-include="fragments/index/growth.html" class="py-8"></section>
         <section id="competencies" data-include="fragments/index/competencies.html" class="py-8"></section>
 
-        <!-- Artifacts: two cards side-by-side (no carousel) -->
+        <!-- Artifacts -->
         <section id="artifacts" class="py-10">
             <h2 class="text-2xl font-bold mb-4">Artifacts</h2>
             <div class="grid gap-6 sm:grid-cols-2">
-                <!-- Artifact Card 1 (thumbnail not clickable) -->
+                <!-- Artifact Card 1 -->
                 <article
                     class="bg-white rounded-2xl shadow-lg md:shadow-xl hover:shadow-2xl transition-shadow duration-200 ring-1 ring-black/5 overflow-hidden flex flex-col">
                     <div class="relative w-full h-40 sm:h-48 md:h-56 overflow-hidden">
@@ -88,10 +87,10 @@
                     </div>
                 </article>
 
-                <!-- Artifact Card 2 (thumbnail not clickable) -->
+                <!-- Artifact Card 2 -->
                 <article
                     class="bg-white rounded-2xl shadow-lg md:shadow-xl hover:shadow-2xl transition-shadow duration-200 ring-1 ring-black/5 overflow-hidden flex flex-col">
-                    <!-- Simple middle-cropped thumbnail (no link) -->
+                    <!-- Thumbnail -->
                     <div class="relative w-full h-40 sm:h-48 md:h-56 overflow-hidden">
                         <img src="assets/images/artifact2/00-thumbnail.webp" alt="Artifact #2 — thumbnail"
                             loading="lazy" decoding="async"
@@ -158,8 +157,7 @@
 
         <!-- Enhancements: single-card large carousel -->
         <section id="enhancements" class="py-10 relative">
-            <div data-include="fragments/index/enhancements.html"></div>
-
+            <h2 class="text-2xl font-bold">The Enhancements</h2>
             <div class="swiper enhancements-swiper max-w-4xl mx-auto" aria-label="Enhancements carousel">
                 <div class="swiper-wrapper">
                     <!-- Enhancement 1 -->
@@ -167,7 +165,6 @@
                         <article class="bg-white rounded-3xl shadow-lg ring-1 ring-black/5 overflow-hidden">
                             <div class="relative h-56 sm:h-64 bg-gradient-to-r from-emerald-600 to-lime-500">
                                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                    <!-- External SVG file -->
                                     <img src="assets/icons/programming.svg" alt=""
                                         class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 icon-white icon-watermark" />
                                 </div>
@@ -200,7 +197,8 @@
                                 <div class="mt-4 flex gap-3">
                                     <a href="enhancements/enhancement1.html"
                                         class="px-4 py-2 rounded-lg bg-gray-900 text-white">Narrative</a>
-                                    <a href="https://github.com/Sarkis-A/Inventory-Tracking-App/tree/main/Inventory%20App%20(Improved)" class="px-4 py-2 rounded-lg border">Repo</a>
+                                    <a href="https://github.com/Sarkis-A/Inventory-Tracking-App/tree/main/Inventory%20App%20(Improved)"
+                                        class="px-4 py-2 rounded-lg border">Repo</a>
                                 </div>
                             </div>
                         </article>
@@ -239,7 +237,8 @@
                                 <div class="mt-4 flex gap-3">
                                     <a href="enhancements/enhancement2.html"
                                         class="px-4 py-2 rounded-lg bg-gray-900 text-white">Narrative</a>
-                                    <a href="https://github.com/Sarkis-A/Advising-Assistance-Program/tree/main/Advising%20Assistance%20Program%20(Improved)" class="px-4 py-2 rounded-lg border">Repo</a>
+                                    <a href="https://github.com/Sarkis-A/Advising-Assistance-Program/tree/main/Advising%20Assistance%20Program%20(Improved)"
+                                        class="px-4 py-2 rounded-lg border">Repo</a>
                                 </div>
                             </div>
                         </article>
@@ -282,7 +281,8 @@
                                 <div class="mt-4 flex gap-3">
                                     <a href="enhancements/enhancement3.html"
                                         class="px-4 py-2 rounded-lg bg-gray-900 text-white">Narrative</a>
-                                    <a href="https://github.com/Sarkis-A/Inventory-Tracking-App/tree/main/Inventory%20App%20(Improved)" class="px-4 py-2 rounded-lg border">Repo</a>
+                                    <a href="https://github.com/Sarkis-A/Inventory-Tracking-App/tree/main/Inventory%20App%20(Improved)"
+                                        class="px-4 py-2 rounded-lg border">Repo</a>
                                 </div>
                             </div>
                         </article>
@@ -305,10 +305,10 @@
     <!-- Footer injected by site.js -->
     <div data-include="footer"></div>
 
-    <!-- Preview overlay root (starts empty) -->
+    <!-- Preview overlay root -->
     <div id="preview-root" aria-hidden="true"></div>
 
-    <!-- Swiper init (Enhancements only) -->
+    <!-- Swiper init -->
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             new Swiper('.enhancements-swiper', {
