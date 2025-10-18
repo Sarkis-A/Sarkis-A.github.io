@@ -1,0 +1,11 @@
+<p class="text-gray-800 leading-7">The hardest parts of this enhancement were the Kotlin migration, Firebase
+    Authentication wiring, and stabilizing the build. Moving fully to Kotlin surfaced null-safety issues and outdated
+    patterns; I addressed these by replacing legacy callbacks with clearer function boundaries, adding explicit
+    nullability, and introducing simple data classes for request/response shapes. Integrating Firebase Auth (with Google
+    sign-in) created Gradle and dependency conflicts; I resolved them by aligning BOM versions, isolating auth code
+    behind a small Kotlin wrapper, and centralizing configuration so additional providers can be added with minimal
+    changes. Finally, UI/UX refinements required reorganizing resources and standardizing strings, colors, and styles; I
+    validated each screen end-to-end (login, guest mode, error states) to ensure a consistent “voice” and predictable
+    navigation. These steps collectively improved reliability, maintainability, and readiness for the upcoming
+    collaborative features.
+</p>

@@ -1,39 +1,34 @@
 // /assets/js/toc-float-spy.js
 (() => {
-  // ===== Config (tweak if your header height changes) =====
-  const STICKY_OFFSET = 80;     // pixels from top (match sticky header height)
-  const PROBE_FRACTION = 0.30;  // 30% down the viewport for section detection
-  const BOTTOM_BUFFER = 24;     // px from bottom to force "Conclusion"
+  const STICKY_OFFSET  = 80;   // float clamp under header
+  const PROBE_FRACTION = 0.45; // probe ~middle of viewport
 
-  // Find ToC and Overview
   const nav = document.getElementById('toc-nav');
   const overview = document.getElementById('overview');
   if (!nav || !overview) return;
 
-  // ===== Floating position: start beside Overview; clamp under header =====
+  // --- Float beside Overview ---
   let tickingTop = false;
-
   function computeTop() {
-    const overviewY = overview.getBoundingClientRect().top + window.scrollY;
-    return Math.max(STICKY_OFFSET, overviewY - window.scrollY);
+    const y = overview.getBoundingClientRect().top + window.scrollY;
+    return Math.max(STICKY_OFFSET, y - window.scrollY);
   }
   function applyTop() { nav.style.top = computeTop() + 'px'; tickingTop = false; }
-  function onScrollTop() {
-    if (!tickingTop) { requestAnimationFrame(applyTop); tickingTop = true; }
-  }
-
+  function onScrollTop() { if (!tickingTop) { requestAnimationFrame(applyTop); tickingTop = true; } }
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     nav.style.transition = 'top .18s ease-out';
   }
 
-  // ===== Active section highlight (midpoint-boundary method) =====
+  // --- Active section via midpoints ---
   const links = Array.from(nav.querySelectorAll('a[href^="#"]'));
   const ids = links.map(a => a.getAttribute('href')).filter(Boolean);
   const sections = ids.map(id => document.querySelector(id)).filter(Boolean);
   const linkById = Object.fromEntries(links.map(a => [a.getAttribute('href'), a]));
 
   function clearActive() { links.forEach(l => l.classList.remove('text-gray-900', 'font-semibold')); }
+  let lastActiveId = null;
   function setActiveById(id) {
+    if (!id || id === lastActiveId) return;
     const link = linkById[id];
     if (!link) return;
     clearActive();
@@ -41,10 +36,8 @@
     lastActiveId = id;
   }
 
-  // Build stable boundaries at midpoints between section tops
-  let positions = [];   // [{ id, top }]
-  let borders = [];     // midpoints
-  let lastActiveId = null;
+  let positions = []; // [{ id, top }]
+  let borders = [];   // midpoints
 
   function recalcPositions() {
     positions = sections.map(sec => ({
@@ -58,15 +51,9 @@
     }
   }
 
-  function isNearBottom() {
-    const scrollBottom = window.scrollY + window.innerHeight;
-    const docHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-    return (docHeight - scrollBottom) <= BOTTOM_BUFFER;
-  }
-
-  function activeFromProbe(probeY) {
+  function pickByMidpoints(probeY) {
     if (!positions.length) return null;
-    if (borders.length === 0 || probeY < borders[0]) return positions[0].id;
+    if (!borders.length || probeY < borders[0]) return positions[0].id;
     if (probeY >= borders[borders.length - 1]) return positions[positions.length - 1].id;
     const idx = borders.findIndex(b => probeY < b);
     return positions[idx].id;
@@ -77,35 +64,56 @@
     if (tickingSpy) return;
     tickingSpy = true;
     requestAnimationFrame(() => {
-      if (isNearBottom() && document.getElementById('conclusion')) {
-        setActiveById('#conclusion');
-        tickingSpy = false;
-        return;
+      const probeY = window.scrollY + window.innerHeight * PROBE_FRACTION;
+
+      // Only activate Conclusion once its top is visible
+      const concl = document.getElementById('conclusion');
+      if (concl) {
+        const conclTop = concl.getBoundingClientRect().top + window.scrollY;
+        const viewportBottom = window.scrollY + window.innerHeight;
+        if (conclTop <= viewportBottom - 4) {
+          setActiveById('#conclusion');
+          tickingSpy = false;
+          return;
+        }
       }
-      const probeY = window.scrollY + STICKY_OFFSET + window.innerHeight * PROBE_FRACTION;
-      const id = activeFromProbe(probeY);
-      if (id) setActiveById(id);
+
+      const id = pickByMidpoints(probeY);
+      setActiveById(id);
       tickingSpy = false;
     });
   }
 
-  // ===== Bootstrap & listeners =====
   function boot() { applyTop(); recalcPositions(); onScrollSpy(); }
-
-  // Initial
   boot();
 
-  // Scroll/resize/load
+  // --- Listeners ---
   addEventListener('scroll', () => { onScrollTop(); onScrollSpy(); }, { passive: true });
   addEventListener('resize', () => { applyTop(); recalcPositions(); onScrollSpy(); });
-  addEventListener('load', () => { applyTop(); recalcPositions(); onScrollSpy(); });
-
-  // If content shifts after includes or DOM ready
+  addEventListener('load',   () => { applyTop(); recalcPositions(); onScrollSpy(); });
   document.addEventListener('DOMContentLoaded', () => { applyTop(); recalcPositions(); onScrollSpy(); });
-  document.addEventListener('includes:loaded', () => { applyTop(); recalcPositions(); onScrollSpy(); });
+  document.addEventListener('includes:loaded',  () => { applyTop(); recalcPositions(); onScrollSpy(); });
 
-  // Recalc after late-loading images shift layout
-  document.querySelectorAll('img').forEach(img => {
-    if (!img.complete) img.addEventListener('load', () => { recalcPositions(); onScrollSpy(); }, { once: true });
-  });
+  // Recalc when images/figures actually change size (lazy-load, responsive)
+  const schedule = (() => {
+    let raf = null;
+    return () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = null;
+        recalcPositions();
+        onScrollSpy();
+      });
+    };
+  })();
+
+  // ResizeObserver for imgs, figures, and sections
+  if ('ResizeObserver' in window) {
+    const ro = new ResizeObserver(schedule);
+    document.querySelectorAll('img, figure, section').forEach(el => ro.observe(el));
+  }
+
+  // MutationObserver for late DOM changes (e.g., fragments included)
+  const mo = new MutationObserver(schedule);
+  mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'class'] });
 })();

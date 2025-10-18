@@ -26,7 +26,6 @@
     <script defer src="assets/js/includes.js"></script>
     <script defer src="assets/js/preview-expand.js"></script>
 
-
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 
@@ -38,10 +37,10 @@
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Text sections via fragments -->
-        <section id="welcome" data-include="fragments/welcome.html" class="pt-10 pb-6"></section>
-        <section id="introduction" data-include="fragments/introduction.html" class="py-8"></section>
-        <section id="growth" data-include="fragments/growth.html" class="py-8"></section>
-        <section id="competencies" data-include="fragments/competencies.html" class="py-8"></section>
+        <section id="welcome" data-include="fragments/index/welcome.html" class="pt-10 pb-6"></section>
+        <section id="introduction" data-include="fragments/index/introduction.html" class="py-8"></section>
+        <section id="growth" data-include="fragments/index/growth.html" class="py-8"></section>
+        <section id="competencies" data-include="fragments/index/competencies.html" class="py-8"></section>
 
         <!-- Artifacts: two cards side-by-side (no carousel) -->
         <section id="artifacts" class="py-10">
@@ -74,12 +73,7 @@
                             </li>
                         </ul>
 
-                        <p class="mt-1 text-sm text-gray-600">
-                            The Android Inventory Tracking Application began as a simple inventory management tool
-                            developed in Java using a local SQLite database.
-                            I enhanced the project in two major phases to improve its architecture and expand its
-                            functionality.
-                        </p>
+                        <div data-include="fragments/index/artifact-one-desc.html"></div>
 
                         <div class="mt-3 flex gap-3">
                             <button type="button"
@@ -126,11 +120,7 @@
                             </li>
                         </ul>
 
-                        <p class="mt-1 text-sm text-gray-600">
-                            The Advising Assistance Program was developed in C++ to help users efficiently store and
-                            retrieve course information. Initially, the program used a hash table to manage this data,
-                            which performed well on small datasets but became less effective as data volume increased.
-                        </p>
+                        <div data-include="fragments/index/artifact-two-desc.html"></div>
 
                         <div class="mt-3 flex gap-3">
                             <button type="button"
@@ -149,7 +139,7 @@
 
         <!-- Code Review Process -->
         <section id="code-review" class="py-10">
-            <div data-include="fragments/code-review-top.html"></div>
+            <div data-include="fragments/index/code-review-top.html"></div>
 
             <!-- YouTube video -->
             <div class="mt-6">
@@ -163,12 +153,12 @@
                 </div>
             </div>
 
-            <div data-include="fragments/code-review-bottom.html"></div>
+            <div data-include="fragments/index/code-review-bottom.html"></div>
         </section>
 
         <!-- Enhancements: single-card large carousel -->
         <section id="enhancements" class="py-10 relative">
-            <div data-include="fragments/enhancements.html"></div>
+            <div data-include="fragments/index/enhancements.html"></div>
 
             <div class="swiper enhancements-swiper max-w-4xl mx-auto" aria-label="Enhancements carousel">
                 <div class="swiper-wrapper">
@@ -205,13 +195,8 @@
                                     </li>
                                 </ul>
 
-                                <p class="mt-2 text-gray-600">
-                                    In this enhancement, I migrated my entire Android application from Java to Kotlin
-                                    and redesigned the user interface to be more intuitive and modern. I improved code
-                                    readability by modularizing and refining naming conventions, making the program more
-                                    maintainable and scalable. I also implemented Firebase Authentication, which laid
-                                    the groundwork for future cloud integration and more secure user access.
-                                </p>
+                                <div data-include="fragments/index/enhance1-desc.html"></div>
+
                                 <div class="mt-4 flex gap-3">
                                     <a href="enhancements/enhancement1.html"
                                         class="px-4 py-2 rounded-lg bg-gray-900 text-white">Narrative</a>
@@ -249,15 +234,8 @@
                                     </li>
                                 </ul>
 
-                                <p class="mt-2 text-gray-600">
-                                    For this enhancement, I replaced the hash table in my Assistance Advising Program
-                                    with a Red-Black Tree. This advanced self-balancing binary search tree maintains
-                                    performance consistency through rotations and recoloring. This implementation
-                                    provided faster, more reliable lookups even as the dataset grew. I also refactored
-                                    the codebase into multiple source and header files, improving readability and
-                                    maintainability. Benchmark testing showed measurable improvements in both efficiency
-                                    and scalability.
-                                </p>
+                                <div data-include="fragments/index/enhance2-desc.html"></div>
+
                                 <div class="mt-4 flex gap-3">
                                     <a href="enhancements/enhancement2.html"
                                         class="px-4 py-2 rounded-lg bg-gray-900 text-white">Narrative</a>
@@ -299,15 +277,8 @@
                                     </li>
                                 </ul>
 
-                                <p class="mt-2 text-gray-600">
-                                    For this enhancement, we continued building on the first enhancement, focusing more
-                                    on the databases category. I integrated Cloud Firestore to enable real-time
-                                    synchronization and cloud-based collaboration. This transformed the app from a
-                                    single-user local system into a shared environment where users can manage group
-                                    inventories with unique access permissions. To ensure data security, I wrote
-                                    detailed Firestore Security Rules that define role-based permissions and validate
-                                    user actions before allowing database operations.
-                                </p>
+                                <div data-include="fragments/index/enhance3-desc.html"></div>
+
                                 <div class="mt-4 flex gap-3">
                                     <a href="enhancements/enhancement3.html"
                                         class="px-4 py-2 rounded-lg bg-gray-900 text-white">Narrative</a>
@@ -328,7 +299,7 @@
         </section>
 
         <!-- Reflection via fragment -->
-        <section id="reflection" data-include="fragments/reflection.html" class="py-10 pb-16"></section>
+        <section id="reflection" data-include="fragments/index/reflection.html" class="py-10 pb-16"></section>
     </main>
 
     <!-- Footer injected by site.js -->
@@ -354,8 +325,6 @@
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
-                // Optional: make it feel firm at the edges
-                // resistanceRatio: 0.85,
             });
         });
     </script>

@@ -2,7 +2,7 @@
 const Header = `
 <header class="bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-40 border-b">
   <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
-    <a href="/" class="font-extrabold tracking-tight">Austin Sarkis</a>
+    <a href="/" class="font-extrabold tracking-tight">Austin Sarkis • ePortfolio</a>
     <ul class="flex items-center gap-5 text-sm">
       <li><a href="/enhancements/enhancement1.html" class="hover:underline">Enhancements</a></li>
       <li><a href="/about.html" class="hover:underline">About</a></li>
