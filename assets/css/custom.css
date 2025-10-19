@@ -77,4 +77,8 @@ html { scroll-behavior: smooth; }
 }
 
 /* soft drop shadow so the outline doesn't get lost on gradients */
-.icon-watermark { filter: drop-shadow(0 2px 8px rgba(0,0,0,.35)); }
+.icon-watermark {
+  filter:
+    drop-shadow(0 3px 6px rgba(0, 0, 0, 0.65))
+    drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35));
+}

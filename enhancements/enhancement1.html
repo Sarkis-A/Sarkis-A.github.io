@@ -2,213 +2,243 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Software Engineering & Design Enhancement</title>
-  <meta name="description"
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Software Engineering & Design Enhancement</title>
+    <meta name="description"
         content="Software Engineering & Design Enhancement: Kotlin migration, UI/UX redesign, Firebase Authentication, and modular refactoring." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="/assets/js/site.js"></script>
-  <script defer src="/assets/js/includes.js"></script>
-  <script defer src="/assets/js/preview-expand.js"></script>
-  <script defer src="/assets/js/toc-float-spy.js"></script>
-  <link rel="stylesheet" href="/assets/css/custom.css" />
-  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="/assets/js/site.js"></script>
+    <script defer src="/assets/js/includes.js"></script>
+    <script defer src="/assets/js/preview-expand.js"></script>
+    <script defer src="/assets/js/toc-float-spy.js"></script>
+    <link rel="stylesheet" href="/assets/css/custom.css" />
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 </head>
 
 <body class="bg-gray-50 text-gray-900">
-  <div data-include="header"></div>
+    <div data-include="header"></div>
 
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <nav aria-label="Breadcrumb" class="pt-6 text-sm text-gray-600">
-      <ol class="flex items-center gap-2">
-        <li><a href="/" class="hover:underline">Home</a></li>
-        <li aria-hidden="true">/</li>
-        <li><a href="/#enhancements" class="hover:underline">Enhancements</a></li>
-        <li aria-hidden="true">/</li>
-        <li aria-current="page" class="text-gray-900 font-medium">Software Engineering &amp; Design Enhancement</li>
-      </ol>
-    </nav>
-
-    <header class="pt-6 pb-4">
-      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Software Engineering &amp; Design Enhancement</h1>
-      <p class="mt-2 text-gray-600 max-w-2xl">
-        Migrate Java to Kotlin, modernize the UI/UX, add Firebase Authentication, and refactor into a modular,
-        maintainable codebase.
-      </p>
-
-      <ul class="mt-4 flex flex-wrap gap-2 text-xs" aria-label="Technologies">
-        <li class="inline-flex items-center gap-1 rounded-full bg-violet-50 text-violet-700 ring-1 ring-violet-200 px-2 py-1">
-          <span>Kotlin</span>
-        </li>
-        <li class="inline-flex items-center gap-1 rounded-full bg-cyan-50 text-cyan-700 ring-1 ring-cyan-200 px-2 py-1">
-          <span>UI/UX</span>
-        </li>
-        <li class="inline-flex items-center gap-1 rounded-full bg-yellow-50 text-yellow-700 ring-1 ring-yellow-200 px-2 py-1">
-          <span>Firebase Auth</span>
-        </li>
-        <li class="inline-flex items-center gap-1 rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200 px-2 py-1">
-          <span>Android</span>
-        </li>
-        <li class="inline-flex items-center gap-1 rounded-full bg-slate-50 text-slate-700 ring-1 ring-slate-200 px-2 py-1">
-          <span>Refactoring</span>
-        </li>
-      </ul>
-
-      <button type="button"
-              class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-900 text-white preview-btn"
-              data-alt="Enhancement 1 gallery"
-              data-gallery-manifest="/assets/images/improved-artifact1/manifest.json">
-        <img src="/assets/icons/camera.svg" alt="" aria-hidden="true" class="w-4 h-4" />
-        View Final Product Gallery
-      </button>
-    </header>
-
-    <div class="lg:grid lg:grid-cols-[1fr,280px] lg:gap-12 lg:items-start">
-      <article class="max-w-none">
-        <!-- Overview -->
-        <section id="overview" class="scroll-mt-24">
-          <h2 class="mt-8 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
-            Overview &amp; Artifact Selection
-          </h2>
-          <div data-include="/fragments/enhancement1/overview.html" class="mt-4"></div>
-        </section>
-
-        <!-- Why -->
-        <section id="rationale" class="scroll-mt-24">
-          <h2 class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
-            Why This Artifact
-          </h2>
-          <div data-include="/fragments/enhancement1/rationale.html" class="mt-4"></div>
-        </section>
-
-        <!-- Implementation -->
-        <section id="implementation" class="scroll-mt-24">
-          <h2 class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
-            Implementation
-          </h2>
-
-          <div data-include="/fragments/enhancement1/implementation-1.html" class="mt-4"></div>
-
-          <div class="not-prose my-6 grid gap-4 sm:grid-cols-2">
-            <figure>
-              <img src="/assets/images/enhancement1/p1-old-file-structure.png"
-                   alt="Legacy project layout prior to Kotlin migration"
-                   class="w-full h-auto rounded-xl ring-1 ring-black/5" loading="lazy" decoding="async" />
-              <figcaption class="mt-2 text-sm text-gray-600">Figure 1A. Prior project layout.</figcaption>
-            </figure>
-            <figure>
-              <img src="/assets/images/enhancement1/p2-new-file-structure.png"
-                   alt="Kotlin-first project structure with updated Gradle configuration"
-                   class="w-full h-auto rounded-xl ring-1 ring-black/5" loading="lazy" decoding="async" />
-              <figcaption class="mt-2 text-sm text-gray-600">Figure 1B. Kotlin-first structure after migration.</figcaption>
-            </figure>
-          </div>
-
-          <div data-include="/fragments/enhancement1/implementation-2.html" class="mt-6"></div>
-
-          <div class="not-prose my-6 grid gap-4 sm:grid-cols-2">
-            <figure>
-              <img src="/assets/images/enhancement1/p5-old-login.png"
-                   alt="Prior login screen before Firebase Auth integration"
-                   class="w-full h-auto rounded-xl ring-1 ring-black/5" loading="lazy" decoding="async" />
-              <figcaption class="mt-2 text-sm text-gray-600">Figure 2A. Previous login flow.</figcaption>
-            </figure>
-            <figure>
-              <img src="/assets/images/enhancement1/p6-new-login.png"
-                   alt="New Kotlin-based login with Firebase Auth and Google provider"
-                   class="w-full h-auto rounded-xl ring-1 ring-black/5" loading="lazy" decoding="async" />
-              <figcaption class="mt-2 text-sm text-gray-600">
-                Figure 2B. Rebuilt login in Kotlin with Google sign-in; ready for more providers.
-              </figcaption>
-            </figure>
-          </div>
-
-          <div data-include="/fragments/enhancement1/implementation-3.html" class="mt-6"></div>
-
-          <div class="not-prose my-6 grid gap-4 sm:grid-cols-2">
-            <figure>
-              <img src="/assets/images/enhancement1/p3-old-comments.png"
-                   alt="Older inline comments with limited documentation"
-                   class="w-full h-auto rounded-xl ring-1 ring-black/5" loading="lazy" decoding="async" />
-              <figcaption class="mt-2 text-sm text-gray-600">Figure 3A. Earlier inline comments.</figcaption>
-            </figure>
-            <figure>
-              <img src="/assets/images/enhancement1/p4-new-comments-detailed.png"
-                   alt="KDoc headers and clearer naming in Kotlin classes and functions"
-                   class="w-full h-auto rounded-xl ring-1 ring-black/5" loading="lazy" decoding="async" />
-              <figcaption class="mt-2 text-sm text-gray-600">Figure 3B. KDoc headers and consistent naming.</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <!-- Outcomes -->
-        <section id="outcomes" class="scroll-mt-24">
-          <h2 class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
-            Course Outcomes Alignment
-          </h2>
-
-          <h3 id="modern" class="mt-6 text-xl font-semibold text-gray-900 pl-3 border-l-4 border-gray-300 scroll-mt-24">
-            Modern Tools
-          </h3>
-          <div data-include="/fragments/enhancement1/outcomes-modern.html" class="mt-3"></div>
-
-          <h3 id="collaborative" class="mt-10 text-xl font-semibold text-gray-900 pl-3 border-l-4 border-gray-300 scroll-mt-24">
-            Collaboration
-          </h3>
-          <div data-include="/fragments/enhancement1/outcomes-collaborative.html" class="mt-3"></div>
-
-          <h3 id="communication" class="mt-10 text-xl font-semibold text-gray-900 pl-3 border-l-4 border-gray-300 scroll-mt-24">
-            Communication
-          </h3>
-          <div data-include="/fragments/enhancement1/outcomes-communication.html" class="mt-3"></div>
-        </section>
-
-        <!-- Challenges & Resolutions -->
-        <section id="challenges" class="scroll-mt-24">
-          <h2 class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
-            Challenges &amp; Resolutions
-          </h2>
-          <div data-include="/fragments/enhancement1/challenges.html" class="mt-4"></div>
-        </section>
-
-        <!-- Conclusion -->
-        <section id="conclusion" class="scroll-mt-24">
-          <h2 class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
-            Conclusion
-          </h2>
-          <div data-include="/fragments/enhancement1/conclusion.html" class="mt-4"></div>
-
-          <div class="mt-10 flex flex-wrap gap-3">
-            <a href="/enhancements/enhancement2.html" class="px-4 py-2 rounded-lg border">Next Enhancement →</a>
-            <a href="/" class="ml-auto px-4 py-2 rounded-lg bg-gray-900 text-white">Back to Home</a>
-          </div>
-        </section>
-      </article>
-
-      <!-- ToC -->
-      <aside class="hidden lg:block">
-        <nav id="toc-nav"
-             class="fixed right-[calc((100vw-72rem)/2+2rem)] w-[280px] rounded-xl border bg-white p-4 text-sm shadow-lg"
-             aria-label="On this page">
-          <p class="font-semibold text-gray-800">On this page</p>
-          <ul class="mt-3 space-y-2">
-            <li><a class="hover:underline text-gray-700" href="#overview">Overview &amp; Artifact Selection</a></li>
-            <li><a class="hover:underline text-gray-700" href="#rationale">Why This Artifact</a></li>
-            <li><a class="hover:underline text-gray-700" href="#implementation">Implementation</a></li>
-            <li><a class="hover:underline text-gray-700" href="#outcomes">Course Outcomes Alignment</a></li>
-            <li class="pl-3"><a class="hover:underline text-gray-600" href="#modern">• Modern Tools</a></li>
-            <li class="pl-3"><a class="hover:underline text-gray-600" href="#collaborative">• Collaboration</a></li>
-            <li class="pl-3"><a class="hover:underline text-gray-600" href="#communication">• Communication</a></li>
-            <li><a class="hover:underline text-gray-700" href="#challenges">Challenges &amp; Resolutions</a></li>
-            <li><a class="hover:underline text-gray-700" href="#conclusion">Conclusion</a></li>
-          </ul>
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav aria-label="Breadcrumb" class="pt-6 text-sm text-gray-600">
+            <ol class="flex items-center gap-2">
+                <li><a href="/" class="hover:underline">Home</a></li>
+                <li aria-hidden="true">/</li>
+                <li><a href="/#enhancements" class="hover:underline">Enhancements</a></li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page" class="text-gray-900 font-medium">Software Engineering &amp; Design Enhancement
+                </li>
+            </ol>
         </nav>
-      </aside>
-    </div>
-  </main>
 
-  <div data-include="footer"></div>
+        <header class="pt-6 pb-4">
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Software Engineering &amp; Design Enhancement
+            </h1>
+            <p class="mt-2 text-gray-600 max-w-2xl">
+                Migrate Java to Kotlin, modernize the UI/UX, add Firebase Authentication, and refactor into a modular,
+                maintainable codebase.
+            </p>
+
+            <ul class="mt-4 flex flex-wrap gap-2 text-xs" aria-label="Technologies">
+                <li
+                    class="inline-flex items-center gap-1 rounded-full bg-violet-50 text-violet-700 ring-1 ring-violet-200 px-2 py-1">
+                    <span>Kotlin</span>
+                </li>
+                <li
+                    class="inline-flex items-center gap-1 rounded-full bg-cyan-50 text-cyan-700 ring-1 ring-cyan-200 px-2 py-1">
+                    <span>UI/UX</span>
+                </li>
+                <li
+                    class="inline-flex items-center gap-1 rounded-full bg-yellow-50 text-yellow-700 ring-1 ring-yellow-200 px-2 py-1">
+                    <span>Firebase Auth</span>
+                </li>
+                <li
+                    class="inline-flex items-center gap-1 rounded-full bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200 px-2 py-1">
+                    <span>Android</span>
+                </li>
+                <li
+                    class="inline-flex items-center gap-1 rounded-full bg-slate-50 text-slate-700 ring-1 ring-slate-200 px-2 py-1">
+                    <span>Refactoring</span>
+                </li>
+            </ul>
+
+            <button type="button"
+                class="mt-4 inline-flex items-center gap-2 px-4 py-[10px] rounded-lg bg-gray-900 text-white preview-btn"
+                data-alt="Enhancement 1 gallery"
+                data-gallery-manifest="/assets/images/improved-artifact1/manifest.json">
+                <img src="/assets/icons/camera.svg" alt="" aria-hidden="true" class="w-4 h-4" />
+                View Final Product Gallery
+            </button>
+            <a href="https://github.com/Sarkis-A/Inventory-Tracking-App/tree/main/Enhancement%20One%20(Improved%20Code)"
+                target="_blank" rel="noopener"
+                class="mt-4 ml-2 inline-flex items-center gap-2 px-4 py-[8px] rounded-lg border border-gray-900 bg-white text-gray-900 hover:bg-gray-100">
+                Repo
+            </a>
+        </header>
+
+        <div class="lg:grid lg:grid-cols-[1fr,280px] lg:gap-12 lg:items-start">
+            <article class="max-w-none">
+                <!-- Overview -->
+                <section id="overview" class="scroll-mt-24">
+                    <h2
+                        class="mt-8 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
+                        Overview &amp; Artifact Selection
+                    </h2>
+                    <div data-include="/fragments/enhancement1/overview.html" class="mt-4"></div>
+                </section>
+
+                <!-- Why -->
+                <section id="rationale" class="scroll-mt-24">
+                    <h2
+                        class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
+                        Why This Artifact
+                    </h2>
+                    <div data-include="/fragments/enhancement1/rationale.html" class="mt-4"></div>
+                </section>
+
+                <!-- Implementation -->
+                <section id="implementation" class="scroll-mt-24">
+                    <h2
+                        class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
+                        Implementation
+                    </h2>
+
+                    <div data-include="/fragments/enhancement1/implementation-1.html" class="mt-4"></div>
+
+                    <div class="not-prose my-6 grid gap-4 sm:grid-cols-2">
+                        <figure>
+                            <img src="/assets/images/enhancement1/p1-old-file-structure.png"
+                                alt="Legacy project layout prior to Kotlin migration"
+                                class="w-full h-auto rounded-xl ring-1 ring-black/5" loading="lazy" decoding="async" />
+                            <figcaption class="mt-2 text-sm text-gray-600">Figure 1A. Prior project layout.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="/assets/images/enhancement1/p2-new-file-structure.png"
+                                alt="Kotlin-first project structure with updated Gradle configuration"
+                                class="w-full h-auto rounded-xl ring-1 ring-black/5" loading="lazy" decoding="async" />
+                            <figcaption class="mt-2 text-sm text-gray-600">Figure 1B. Kotlin-first structure after
+                                migration.
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div data-include="/fragments/enhancement1/implementation-2.html" class="mt-6"></div>
+
+                    <div class="not-prose my-6 grid gap-4 sm:grid-cols-2">
+                        <figure>
+                            <img src="/assets/images/enhancement1/p5-old-login.png"
+                                alt="Prior login screen before Firebase Auth integration"
+                                class="w-full h-auto rounded-xl ring-1 ring-black/5" loading="lazy" decoding="async" />
+                            <figcaption class="mt-2 text-sm text-gray-600">Figure 2A. Previous login flow.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="/assets/images/enhancement1/p6-new-login.png"
+                                alt="New Kotlin-based login with Firebase Auth and Google provider"
+                                class="w-full h-auto rounded-xl ring-1 ring-black/5" loading="lazy" decoding="async" />
+                            <figcaption class="mt-2 text-sm text-gray-600">
+                                Figure 2B. Rebuilt login in Kotlin with Google sign-in; ready for more providers.
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div data-include="/fragments/enhancement1/implementation-3.html" class="mt-6"></div>
+
+                    <div class="not-prose my-6 grid gap-4 sm:grid-cols-2">
+                        <figure>
+                            <img src="/assets/images/enhancement1/p3-old-comments.png"
+                                alt="Older inline comments with limited documentation"
+                                class="w-full h-auto rounded-xl ring-1 ring-black/5" loading="lazy" decoding="async" />
+                            <figcaption class="mt-2 text-sm text-gray-600">Figure 3A. Earlier inline comments.
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img src="/assets/images/enhancement1/p4-new-comments-detailed.png"
+                                alt="KDoc headers and clearer naming in Kotlin classes and functions"
+                                class="w-full h-auto rounded-xl ring-1 ring-black/5" loading="lazy" decoding="async" />
+                            <figcaption class="mt-2 text-sm text-gray-600">Figure 3B. KDoc headers and consistent
+                                naming.</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <!-- Outcomes -->
+                <section id="outcomes" class="scroll-mt-24">
+                    <h2
+                        class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
+                        Course Outcomes Alignment
+                    </h2>
+
+                    <h3 id="modern"
+                        class="mt-6 text-xl font-semibold text-gray-900 pl-3 border-l-4 border-gray-300 scroll-mt-24">
+                        Modern Tools
+                    </h3>
+                    <div data-include="/fragments/enhancement1/outcomes-modern.html" class="mt-3"></div>
+
+                    <h3 id="collaborative"
+                        class="mt-10 text-xl font-semibold text-gray-900 pl-3 border-l-4 border-gray-300 scroll-mt-24">
+                        Collaboration
+                    </h3>
+                    <div data-include="/fragments/enhancement1/outcomes-collaborative.html" class="mt-3"></div>
+
+                    <h3 id="communication"
+                        class="mt-10 text-xl font-semibold text-gray-900 pl-3 border-l-4 border-gray-300 scroll-mt-24">
+                        Communication
+                    </h3>
+                    <div data-include="/fragments/enhancement1/outcomes-communication.html" class="mt-3"></div>
+                </section>
+
+                <!-- Challenges & Resolutions -->
+                <section id="challenges" class="scroll-mt-24">
+                    <h2
+                        class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
+                        Challenges &amp; Resolutions
+                    </h2>
+                    <div data-include="/fragments/enhancement1/challenges.html" class="mt-4"></div>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion" class="scroll-mt-24">
+                    <h2
+                        class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
+                        Conclusion
+                    </h2>
+                    <div data-include="/fragments/enhancement1/conclusion.html" class="mt-4"></div>
+
+                    <div class="mt-10 flex flex-wrap gap-3">
+                        <a href="/enhancements/enhancement2.html" class="px-4 py-2 rounded-lg border">Next Enhancement
+                            →</a>
+                        <a href="/" class="ml-auto px-4 py-2 rounded-lg bg-gray-900 text-white">Back to Home</a>
+                    </div>
+                </section>
+            </article>
+
+            <!-- ToC -->
+            <aside class="hidden lg:block">
+                <nav id="toc-nav"
+                    class="fixed right-[calc((100vw-72rem)/2+2rem)] w-[280px] rounded-xl border bg-white p-4 text-sm shadow-lg"
+                    aria-label="On this page">
+                    <p class="font-semibold text-gray-800">On this page</p>
+                    <ul class="mt-3 space-y-2">
+                        <li><a class="hover:underline text-gray-700" href="#overview">Overview &amp; Artifact
+                                Selection</a></li>
+                        <li><a class="hover:underline text-gray-700" href="#rationale">Why This Artifact</a></li>
+                        <li><a class="hover:underline text-gray-700" href="#implementation">Implementation</a></li>
+                        <li><a class="hover:underline text-gray-700" href="#outcomes">Course Outcomes Alignment</a></li>
+                        <li class="pl-3"><a class="hover:underline text-gray-600" href="#modern">• Modern Tools</a></li>
+                        <li class="pl-3"><a class="hover:underline text-gray-600" href="#collaborative">•
+                                Collaboration</a></li>
+                        <li class="pl-3"><a class="hover:underline text-gray-600" href="#communication">•
+                                Communication</a></li>
+                        <li><a class="hover:underline text-gray-700" href="#challenges">Challenges &amp; Resolutions</a>
+                        </li>
+                        <li><a class="hover:underline text-gray-700" href="#conclusion">Conclusion</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+    </main>
+
+    <div data-include="footer"></div>
 </body>
 
 </html>
