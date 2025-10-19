@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About • Austin Sarkis</title>
+    <meta name="description" content="About Austin Sarkis — background, values, skills, and experience." />
+    <link rel="icon" href="/assets/icons/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="/assets/js/site.js"></script>
+    <script defer src="/assets/js/includes.js"></script>
+    <link rel="stylesheet" href="/assets/css/custom.css" />
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+    <!-- Header -->
+    <div data-include="header"></div>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="pt-6 text-sm text-gray-600">
+            <ol class="flex items-center gap-2">
+                <li><a href="/" class="hover:underline">Home</a></li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page" class="text-gray-900 font-medium">About</li>
+            </ol>
+        </nav>
+
+        <!-- Hero -->
+        <header class="pt-6 pb-4">
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">About</h1>
+            <p class="mt-2 text-gray-600 max-w-2xl">
+                Software developer with a focus on maintainable architecture, usable interfaces, and secure, scalable
+                systems.
+            </p>
+        </header>
+
+        <!-- Layout -->
+        <div class="grid lg:grid-cols-[1fr,320px] lg:gap-12">
+            <!-- Main -->
+            <article class="max-w-none">
+                <!-- Intro -->
+                <section class="scroll-mt-24">
+                    <h2
+                        class="mt-8 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
+                        Background
+                    </h2>
+                    <div data-include="/fragments/about/background.html" class="mt-4"></div>
+                </section>
+
+                <!-- Skills -->
+                <section class="scroll-mt-24">
+                    <h2
+                        class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
+                        Skills & Tools
+                    </h2>
+
+                    <div class="mt-4 grid gap-6 md:grid-cols-2">
+                        <div class="rounded-xl border bg-white p-4 shadow-sm">
+                            <h3 class="font-semibold text-gray-900">Languages</h3>
+                            <p class="mt-2 text-gray-700 text-sm">Kotlin, Java, C++, JavaScript/TypeScript, NoSQL, Python</p>
+                        </div>
+                        <div class="rounded-xl border bg-white p-4 shadow-sm">
+                            <h3 class="font-semibold text-gray-900">Platforms</h3>
+                            <p class="mt-2 text-gray-700 text-sm">Android, Firebase (Auth/Firestore), Web</p>
+                        </div>
+                        <div class="rounded-xl border bg-white p-4 shadow-sm">
+                            <h3 class="font-semibold text-gray-900">Practices</h3>
+                            <p class="mt-2 text-gray-700 text-sm">Modular design, code reviews, benchmarking,
+                                user-centeric design</p>
+                        </div>
+                        <div class="rounded-xl border bg-white p-4 shadow-sm">
+                            <h3 class="font-semibold text-gray-900">Tooling</h3>
+                            <p class="mt-2 text-gray-700 text-sm">Android Studio, Gradle, Git/GitHub</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education & Experience -->
+                <section class="scroll-mt-24">
+                    <h2
+                        class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
+                        Snapshot
+                    </h2>
+                    <ol class="mt-4 space-y-4">
+                        <li class="rounded-xl border bg-white p-4 shadow-sm">
+                            <div class="text-sm text-gray-500">Present</div>
+                            <div class="font-semibold text-gray-900">Software Projects & ePortfolio</div>
+                            <p class="mt-1 text-gray-700 text-sm">Mobile, algorithms, and database enhancements
+                                demonstrating architecture, performance, and UX.</p>
+                        </li>
+                        <li class="rounded-xl border bg-white p-4 shadow-sm">
+                            <div class="text-sm text-gray-500">Southern New Hampshire University</div>
+                            <div class="font-semibold text-gray-900">B.S. in Computer Science</div>
+                            <p class="mt-1 text-gray-700 text-sm">Focus on software engineering.</p>
+                        </li>
+                        <li class="rounded-xl border bg-white p-4 shadow-sm">
+                            <div class="text-sm text-gray-500">U.S. Air Force</div>
+                            <div class="font-semibold text-gray-900">Service & Leadership</div>
+                            <p class="mt-1 text-gray-700 text-sm">Operational discipline, collaboration, and
+                                mission-driven delivery.</p>
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- CTA -->
+                <section class="scroll-mt-24">
+                    <h2
+                        class="mt-12 text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
+                        Get in Touch
+                    </h2>
+                    <p class="mt-4 text-gray-800 leading-7">
+                        I'm open to software engineering roles and collaborations. If my work aligns with your team or
+                        you're looking to hire new talent, I'd love to connect.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-3">
+                        <a href="/contact.html"
+                            class="px-4 py-2 rounded-lg bg-gray-900 text-white">Email</a>
+                        <a href="/assets/resume/Austin-Sarkis-Resume.html" class="px-4 py-2 rounded-lg border">Resume</a>
+                        <a href="https://github.com/Sarkis-A" class="px-4 py-2 rounded-lg border">GitHub</a>
+                        <a href="https://linkedin.com/in/austin-sarkis" class="px-4 py-2 rounded-lg border">LinkedIn</a>
+                    </div>
+                </section>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="mt-8 lg:mt-0">
+                <div class="rounded-2xl border bg-white p-5 shadow-sm lg:sticky lg:top-20">
+                    <div class="flex items-center gap-4">
+                        <img src="/assets/images/profile-pic.png" alt="Portrait of Austin Sarkis"
+                            class="h-16 w-16 rounded-full object-cover ring-1 ring-black/5">
+                        <div>
+                            <p class="font-semibold text-gray-900">Austin Sarkis</p>
+                            <p class="text-sm text-gray-600">Software Developer</p>
+                        </div>
+                    </div>
+                    <dl class="mt-4 space-y-3 text-sm">
+                        <div class="flex justify-between gap-4">
+                            <dt class="text-gray-600">Location</dt>
+                            <dd class="text-gray-900">Portland, OR</dd>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                            <dt class="text-gray-600">Focus</dt>
+                            <dd class="text-gray-900">Full-Stack • Back-end • Mobile</dd>
+                        </div>
+                        <div class="flex justify-between gap-4">
+                            <dt class="text-gray-600">Email</dt>
+                            <dd>
+                                <a class="text-gray-900 underline decoration-gray-300 hover:decoration-gray-700"
+                                    href="mailto:austin.sarkis@outlook.com">austin.sarkis@outlook.com</a>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div data-include="footer"></div>
+</body>
+
+</html>

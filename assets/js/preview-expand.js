@@ -1,4 +1,3 @@
-// assets/js/preview-expand.js
 (() => {
   // --- Lazy-load Swiper assets if not present ---
   const SWIPER_CSS = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css";

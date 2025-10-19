@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact • Austin Sarkis</title>
+  <meta name="description" content="Contact Austin Sarkis — software developer." />
+  <link rel="icon" href="/assets/icons/favicon.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="/assets/js/site.js"></script>
+  <script defer src="/assets/js/includes.js"></script>
+  <link rel="stylesheet" href="/assets/css/custom.css" />
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <div data-include="header"></div>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav aria-label="Breadcrumb" class="pt-6 text-sm text-gray-600">
+      <ol class="flex items-center gap-2">
+        <li><a href="/" class="hover:underline">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page" class="text-gray-900 font-medium">Contact</li>
+      </ol>
+    </nav>
+
+    <header class="pt-6 pb-4">
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Contact</h1>
+      <p class="mt-2 text-gray-600 max-w-2xl">
+        Let's connect about software engineering roles, collaborations, or questions about my projects.
+      </p>
+    </header>
+
+    <div class="grid lg:grid-cols-[1fr,320px] lg:gap-12">
+      <!-- Form -->
+      <section aria-labelledby="contact-form-title">
+        <h2 id="contact-form-title" class="sr-only">Send a message</h2>
+
+        <form action="https://example.com/form-handler" method="POST"
+          class="rounded-2xl border bg-white p-6 shadow-sm space-y-5">
+          <!-- honeypot -->
+          <input type="text" name="company" autocomplete="off" tabindex="-1" class="hidden" aria-hidden="true" />
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+              <input id="name" name="name" type="text" required
+                class="mt-1 block w-full rounded-lg border border-black focus:border-black focus:ring-black" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+              <input id="email" name="email" type="email" required
+                class="mt-1 block w-full rounded-lg border border-black focus:border-black focus:ring-black" />
+            </div>
+          </div>
+
+          <div>
+            <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+            <input id="subject" name="subject" type="text"
+              class="mt-1 block w-full rounded-lg border border-black focus:border-black focus:ring-black" />
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+            <textarea id="message" name="message" rows="6" required
+              class="mt-1 block w-full rounded-lg border border-black focus:border-black focus:ring-black"></textarea>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button type="submit"
+              class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-gray-900 text-white">
+              Send
+            </button>
+            <a href="mailto:austin@example.com?subject=Hello%20Austin" class="text-sm text-gray-700 hover:underline">
+              or email me directly
+            </a>
+          </div>
+
+          <!-- success / error placeholders -->
+          <p class="hidden text-sm text-emerald-700 bg-emerald-50 ring-1 ring-emerald-200 rounded-lg p-3"
+            id="form-success">
+            Thanks! Your message was sent.
+          </p>
+          <p class="hidden text-sm text-rose-700 bg-rose-50 ring-1 ring-rose-200 rounded-lg p-3" id="form-error">
+            Something went wrong. Please try again or use the email link above.
+          </p>
+        </form>
+      </section>
+
+      <!-- Sidebar -->
+      <aside class="mt-8 lg:mt-0">
+        <div class="rounded-2xl border bg-white p-6 shadow-sm space-y-5">
+          <div>
+            <h2 class="text-lg font-semibold text-gray-900">Quick Links</h2>
+            <ul class="mt-3 space-y-2 text-sm">
+              <li><a href="https://github.com/Sarkis-A" class="text-gray-700 hover:underline">GitHub</a></li>
+              <li><a href="https://linkedin.com/in/austin-sarkis" class="text-gray-700 hover:underline">LinkedIn</a>
+              </li>
+              <li><a href="/assets/resume/Austin-Sarkis-Resume.html" class="text-gray-700 hover:underline">Resume</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-lg font-semibold text-gray-900">Availability</h2>
+            <p class="mt-2 text-sm text-gray-700">
+              Open to all software engineering roles and collaborations.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-lg font-semibold text-gray-900">Response Time</h2>
+            <p class="mt-2 text-sm text-gray-700">
+              I typically reply within 1-2 days.
+            </p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div data-include="footer"></div>
+</body>
+
+</html>

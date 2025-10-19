@@ -1,4 +1,3 @@
-// /assets/js/toc-float-spy.js
 (() => {
   const STICKY_OFFSET  = 80;   // float clamp under header
   const PROBE_FRACTION = 0.45; // probe ~middle of viewport

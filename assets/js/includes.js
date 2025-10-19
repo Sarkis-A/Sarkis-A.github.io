@@ -1,4 +1,3 @@
-// assets/js/includes.js
 function injectIncludes() {
   document.querySelectorAll('[data-include]').forEach(async (el) => {
     const src = el.getAttribute('data-include');
