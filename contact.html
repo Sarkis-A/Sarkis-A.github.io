@@ -163,6 +163,8 @@
                 if (res.ok) {
                     ok?.classList.remove('hidden');
                     form.reset();
+                    const t0El = document.getElementById('t0');
+                    if (t0El) t0El.value = String(Date.now());
                 } else {
                     err?.classList.remove('hidden');
                 }
